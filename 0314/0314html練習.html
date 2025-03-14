@@ -52,11 +52,14 @@
 			<form action="https://www.google.com/search" method="get">
 				<!--for可以寫在外面 一般的話需把input包起來-->
 				<!--id絕對不能重複!-->
-				<label for="gg-search">google搜尋</label>
 				<input type="text" placeholder="這裡輸入email" />
 				<br />
-				<input type="text" placeholder="這裡輸入密碼" />
+				<label
+					>密碼
+					<input type="text" placeholder="這裡輸入密碼" />
+				</label>
 				<br />
+				<label for="gg-search">google搜尋</label>
 				<input type="text" placeholder="google" name="q" id="gg-search" />
 				<br />
 				<button type="submit">提交表單</button>
@@ -96,6 +99,66 @@
 				<input type="image" src="/resouce/patrick.jpg" alt="" />
 				<input type="range" value="30" min="10" max="100" step="10" />
 				<textarea name="" id="" rows="7" cols="40"></textarea>
+				<br />選框框
+				<!--raido=單選一定要勾    checkbox=複選可以不勾-- checked=預設-->
+				<div>
+					想吃的午餐
+					<label
+						>牛肉麵
+						<input type="radio" name="lunch" id="" checked />
+					</label>
+					<label
+						>麥當勞
+						<input type="radio" name="lunch" id="" />
+					</label>
+					<label
+						>御飯糰
+						<input type="radio" name="lunch" id="" />
+					</label>
+					<label
+						>星巴克
+						<input type="radio" name="lunch" id="" />
+					</label>
+				</div>
+				<div>
+					喜歡什麼晚餐
+					<label
+						>牛肉麵
+						<input type="checkbox" name="dinner" id="" />
+					</label>
+					<label
+						>麥當勞
+						<input type="checkbox" name="dinner" id="" />
+					</label>
+					<label
+						>御飯糰
+						<input type="checkbox" name="dinner" id="" />
+					</label>
+					<label
+						>星巴克
+						<input type="checkbox" name="dinner" id="" checked />
+					</label>
+				</div>
+				<fieldset>
+					<!--fieldset裡面包著legend=標題再包著label表單-->
+					<legend>我愛吃的午餐</legend>
+					<label
+						>牛肉麵
+						<input type="radio" name="lunch" id="" checked />
+					</label>
+					<label
+						>麥當勞
+						<input type="radio" name="lunch" id="" />
+					</label>
+					<label
+						>御飯糰
+						<input type="radio" name="lunch" id="" />
+					</label>
+					<label
+						>星巴克
+						<input type="radio" name="lunch" id="" />
+					</label>
+				</fieldset>
 				<button type="submit">提交表單</button>
 				<button type="button">一顆按鈕</button>
 				<button type="reset">重置表單</button>
