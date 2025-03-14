@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>0314html練習</title>
-		<link rel="stylesheet" href="/0314-resouce/reset.css" />
+		<link rel="stylesheet" href="/resouce/reset.css" />
 		<link rel="stylesheet" href="style.css" />
 	</head>
 
@@ -23,24 +23,24 @@
 		&lt;mark&gt;非常重要的文字&lt;/mark&gt;
   </pre
 		>
-		<img src="/0314-resouce/patrick.jpg" alt="派大" />
+		<img src="/resouce/patrick.jpg" alt="派大" />
 		<p>
 			<time datetime="2025-03-14T15:30:45+08:00">15:30</time>
 		</p>
 		<!--autoplay若是有音訊會停止自動撥放 需手動設置音量為0 muted autoplay-->
 		<div>
-			<video src="/0314-resouce/machine.mp4" muted autoplay style="width: 30%">
+			<video src="/resouce/machine.mp4" muted autoplay style="width: 30%">
 				沒影片時顯示文字
 			</video>
 			<br />
 			<img
-				src="/0314-resouce/練習圖.svg"
+				src="/resouce/練習圖.svg"
 				alt="EDIT"
 				style="background-color: blue"
 			/>
 			<video controls>
 				<audio
-					src="/0314-resouce/sound-design-elements-sfx-ps-022-302865.mp3"
+					src="/resouce/sound-design-elements-sfx-ps-022-302865.mp3"
 					type="audio/mpeg"
 				></audio>
 			</video>
@@ -48,11 +48,54 @@
 		<div>
 			<!--action=路徑 methoD=方法-->
 			<!-- submit=提交表單<這是預設    button=按鈕 reset=重置-->
-			<form action="" method="">
+			<!-- required=必填 value=預設值 readonly=唯讀-->
+			<form action="https://www.google.com/search" method="get">
+				<!--for可以寫在外面 一般的話需把input包起來-->
+				<!--id絕對不能重複!-->
+				<label for="gg-search">google搜尋</label>
 				<input type="text" placeholder="這裡輸入email" />
 				<br />
 				<input type="text" placeholder="這裡輸入密碼" />
 				<br />
+				<input type="text" placeholder="google" name="q" id="gg-search" />
+				<br />
+				<button type="submit">提交表單</button>
+			</form>
+			<form action="https://www.youtube.com/results" method="get">
+				<input type="text" placeholder="搜尋" name="search_query" />
+				<input type="search" value="按鈕" id="" />
+				<br />
+				<input
+					type="email"
+					placeholder="信箱"
+					required
+					readonly
+					value="qaz237562@gmail.com"
+				/>
+				<input type="number" placeholder="數字" />
+				<input type="password" placeholder="密碼" />
+				<input type="tel" placeholder="電話" />
+				<input type="url" placeholder="網址" />
+				<!--min max-->
+				<br />日期
+				<input type="date" min="2025-03-11" max="2025-03-20" />
+				<input type="datetime-local25" />
+				<input type="month" />
+				<input type="time" />
+				<input type="week" />
+				<br />雜項 類似button
+				<!--button=可以塞多多=複雜-->
+				<!--input=button只需要文字可以選擇-->
+				<!--image=sumbit的效果-->
+				<!--step=設定格數-->
+				<input type="button" value="搜尋	" />
+				<input type="submit" name="" value="搜尋" />
+				<input type="reset" value="重置表單" />
+				<input type="color" name="" />
+				<input type="file" name="" />
+				<input type="image" src="/resouce/patrick.jpg" alt="" />
+				<input type="range" value="30" min="10" max="100" step="10" />
+				<textarea name="" id="" rows="7" cols="40"></textarea>
 				<button type="submit">提交表單</button>
 				<button type="button">一顆按鈕</button>
 				<button type="reset">重置表單</button>
