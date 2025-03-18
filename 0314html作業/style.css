@@ -1,9 +1,70 @@
-* {
+body {
 	background-color: #f0ebf8;
 }
 div {
-	width: 50%;
+	border: 0.5px solid #dadce0;
+	border-radius: 6px;
+	width: 30%;
 	margin: 0 auto 10px auto;
-
 	background-color: #fff;
+	padding: 14px 24px 5px;
+}
+
+fieldset {
+	border: 0.5px solid #dadce0;
+	border-radius: 6px;
+	width: 30%;
+	margin: 0 auto 10px auto;
+	background-color: #fff;
+	padding: 14px 24px 24px;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 150%;
+	margin: 0%;
+}
+p {
+	line-height: 250%;
+	font-size: 14px;
+}
+span {
+	color: #d93025;
+}
+label {
+	line-height: 24px;
+}
+.border-style {
+	border: 0px solid #fff;
+	outline: none;
+}
+
+.foot {
+	border: 0px;
+	background-color: #f0ebf8;
+	position: relative;
+}
+
+/*cursor pointer 滑鼠效果*/
+.sbm {
+	border: 0px;
+	border-radius: 6px;
+	background-color: #673ab7;
+	color: #fff;
+	padding: 10px 24px;
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.refresh {
+	border: 0px;
+	border-radius: 6px;
+	background-color: #f0ebf8;
+	color: #673ab7;
+	padding: 10px 0px;
+	cursor: pointer;
+	position: absolute;
+	top: 0px;
+	right: 0px;
 }

@@ -8,21 +8,87 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+    <thead>
 		<div>
-			<fieldset>
-				<legend>F2E02 表單練習</legend>
-			</fieldset>
+			<h1>F2E02 表單練習</h1>
+			<p>僅供新尖兵 F2E02 表單切版練習作業</p>
+			<p><span>*表示必填問題</span></p>
 		</div>
-		<div>
-			<label for="name">姓名</label>
-			<input type="text" placeholder="您的回答" id="name" required />
+    </thead>
+    <tbody>
+		<fieldset>
+      <label for="name">姓名<span>*</span></label>
+			<br />
+			<input
+				class="border-style"
+				type="text"
+				placeholder="您的回答"
+				id="name"
+				required
+			/>
+		</fieldset>
+		<fieldset>
+			<label for="mail">信箱<span>*</span></label>
+			<br />
+			<input
+				class="border-style"
+				type="text"
+				placeholder="您的回答"
+				id="mail"
+				required
+			/>
+		</fieldset>
+		<fieldset>
+      <label for="birth">生日</label></label>
+      <br>
+      <p>日期</p>
+      <input type="date" id="birth">
+    </fieldset>
+    <fieldset>
+      <label for="teach">想跟老師說悄悄話</label></label>
+      <br>
+      <textarea  id="teach" cols="30" rows="10" placeholder="您的回答"></textarea>
+    </fieldset>
+    <fieldset>
+      <p>喜歡的顏色</p>
+      <label>黃
+      <input type="radio" name="color" id="">
+      </label>      
+      <label>綠
+      <input type="radio" name="color" id="">
+      </label>      
+      <label>紅
+      <input type="radio" name="color" id="">
+      </label>
+    </fieldset>
+    <fieldset>      
+      <h2>喜歡吃的飲食類型</h2>
+      <label>中式
+      <input type="radio" name="drink" id="">
+      </label>
+      <label>義式
+      <input type="radio" name="drink" id="">
+      </label>
+      <label>日式
+      <input type="radio" name="drink" id="">
+      </label>
+      <label>韓式
+      <input type="radio" name="drink" id="">
+      </label>
+      <label>美式
+      <input type="radio" name="drink" id="">
+      </label>
+      <label>泰式
+      <input type="radio" name="drink" id="">
+      </label>
+    </fieldset>
+    <fieldset>最想去的國家</fieldset>
+    </tbody>
+    <tfoot>
+		<div class="foot">
+			<button class="sbm" type="submit">提交</button>
+			<button class="refresh" type="submit">清除表單</button>
 		</div>
-		<div>45</div>
-		<div>77</div>
-		<div>11</div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<button type="submit">提交</button>
+    </tfoot>
 	</body>
 </html>
