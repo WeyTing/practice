@@ -90,11 +90,14 @@ function add(a, b) {
 console.log(add(1, 2));
 console.log(add(3, 2));
 
+//bmi計算 體重 / 身高平方公尺
 //四捨五入 math.round *100 /100
+
+function roundto(c, d) {}
 function calcBMI(height, weight) {
 	const h = height / 100;
 	const bmi = weight / (h * h); // h **2
 	return bmi;
 }
-
+// math.round(bmi*100) /100
 console.log(calcBMI(160, 50));
