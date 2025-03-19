@@ -55,11 +55,24 @@ function repeatstring(aaa, n) {
 console.log(repeatstring("hello", 5));
 console.log(repeatstring("1234", 2));
 
-function factiorial(n) {
-  for (let a = 1; a <= n; a++) {
-    sum = 
-  }
+function sumupto(a) {
+  return (a * (a + 1)) / 2;
 }
-function sumupto(a){
+console.log(sumupto(5));
 
+function factorial(n) {
+  let summ = 1;
+  for (let i = 1; i <= n; i++) {
+    summ *= i;
+  }
+  return summ;
 }
+
+console.log(factorial(5));
+
+let bbb = 0;
+for (let i = 1; i <= 10; i++) {
+  bbb += 1;
+}
+
+console.log(bbb);
