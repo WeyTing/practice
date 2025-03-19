@@ -88,3 +88,13 @@ console.log(sumArr);
 // splice(起始,刪除,補東西) filter 判斷 map 給幾個就拿幾個 push把元素丟回陣列 every全部做判斷 some部分做判斷
 
 // reduce(累加直,目前元素)
+
+const students = [
+	{ name: "Alice", score: 85 },
+	{ name: "Bob", score: 92 },
+	{ name: "Charlie", score: 78 },
+	{ name: "David", score: 95 },
+	{ name: "Eve", score: 88 },
+];
+const namesSc = students.map((student) => `${student.name}:${student.score}`);
+console.log(namesSc);
