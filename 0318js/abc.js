@@ -82,9 +82,12 @@
 //const nn = add();
 //
 //console.log(nn);
+//f(a,b) = a+b
 
-function add(a, b) {
-	return a + b;
+function add(a) {
+	const c = a * 2 - 1;
+
+	return c + b;
 }
 
 console.log(add(1, 2));
@@ -93,11 +96,14 @@ console.log(add(3, 2));
 //bmi計算 體重 / 身高平方公尺
 //四捨五入 math.round *100 /100
 
-function roundto(c, d) {}
+function roundto(num, n) {
+	const ratio = 10 ** n;
+	return Math.round(num * ratio) / ratio;
+}
 function calcBMI(height, weight) {
 	const h = height / 100;
 	const bmi = weight / (h * h); // h **2
-	return bmi;
+	return round(bmi, 3);
 }
 // math.round(bmi*100) /100
 console.log(calcBMI(160, 50));

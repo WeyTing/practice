@@ -1,0 +1,15 @@
+
+//bmi計算 體重 / 身高平方公尺
+//四捨五入 math.round *100 /100
+
+function roundto(num, n) {
+	const ratio = 10 ** n;
+	return Math.round(num * ratio) / ratio;
+}
+function calcBMI(height, weight) {
+	const h = height / 100;
+	const bmi = weight / (h * h); // h **2
+	return round(bmi, 3);
+}
+// math.round(bmi*100) /100
+console.log(calcBMI(160, 50));
