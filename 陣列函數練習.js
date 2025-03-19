@@ -53,7 +53,7 @@ function repeatstring(aaa, n) {
   return aaa.repeat(n);
 }
 console.log(repeatstring("hello", 5));
-console.log(repeatstring("dick", 2));
+console.log(repeatstring("1234", 2));
 
 function factiorial(n) {
   for (let a = 1; a <= n; a++) {
@@ -61,5 +61,5 @@ function factiorial(n) {
   }
 }
 function sumupto(a){
-  
+
 }
