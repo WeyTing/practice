@@ -4,21 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>表單練習</title>
-		<link rel="stylesheet" href="../resouce/reset.css" />
+		<link rel="stylesheet" href="../resouce/reset(f2e02.css)" />
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-    <thead>
 		<div>
 			<h1>F2E02 表單練習</h1>
 			<p>僅供新尖兵 F2E02 表單切版練習作業</p>
 			<p><span>*表示必填問題</span></p>
 		</div>
-    </thead>
     <tbody>
+    <form>
 		<fieldset>
-      <label for="name">姓名<span>*</span></label>
-			<br />
+      <h2><label for="name">姓名<span>*</span></label></h2> 
 			<input
 				class="border-style"
 				type="text"
@@ -28,8 +26,7 @@
 			/>
 		</fieldset>
 		<fieldset>
-			<label for="mail">信箱<span>*</span></label>
-			<br />
+			<h2><label for="mail">信箱<span>*</span></label></h2>
 			<input
 				class="border-style"
 				type="text"
@@ -41,7 +38,7 @@
 		<fieldset>
       <label for="birth">生日</label></label>
       <br>
-      <p>日期</p>
+      <h2>日期</h2>
       <input type="date" id="birth">
     </fieldset>
     <fieldset>
@@ -50,7 +47,7 @@
       <textarea  id="teach" cols="30" rows="10" placeholder="您的回答"></textarea>
     </fieldset>
     <fieldset>
-      <p>喜歡的顏色</p>
+      <h2>喜歡的顏色</h2>
       <label>黃
       <input type="radio" name="color" id="">
       </label>      
@@ -83,12 +80,10 @@
       </label>
     </fieldset>
     <fieldset>最想去的國家</fieldset>
-    </tbody>
-    <tfoot>
+    </form>
 		<div class="foot">
 			<button class="sbm" type="submit">提交</button>
 			<button class="refresh" type="submit">清除表單</button>
 		</div>
-    </tfoot>
 	</body>
 </html>
