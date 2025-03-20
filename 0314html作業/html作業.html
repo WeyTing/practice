@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>表單練習</title>
-		<link rel="stylesheet" href="../resouce/reset(f2e02.css)" />
+		<link rel="stylesheet" href="../resouce/reset(f2e02).css" />
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
@@ -13,77 +13,88 @@
 			<p>僅供新尖兵 F2E02 表單切版練習作業</p>
 			<p><span>*表示必填問題</span></p>
 		</div>
-    <tbody>
-    <form>
-		<fieldset>
-      <h2><label for="name">姓名<span>*</span></label></h2> 
-			<input
-				class="border-style"
-				type="text"
-				placeholder="您的回答"
-				id="name"
-				required
-			/>
-		</fieldset>
-		<fieldset>
-			<h2><label for="mail">信箱<span>*</span></label></h2>
-			<input
-				class="border-style"
-				type="text"
-				placeholder="您的回答"
-				id="mail"
-				required
-			/>
-		</fieldset>
-		<fieldset>
-      <label for="birth">生日</label></label>
-      <br>
-      <h2>日期</h2>
-      <input type="date" id="birth">
-    </fieldset>
-    <fieldset>
-      <label for="teach">想跟老師說悄悄話</label></label>
-      <br>
-      <textarea  id="teach" cols="30" rows="10" placeholder="您的回答"></textarea>
-    </fieldset>
-    <fieldset>
-      <h2>喜歡的顏色</h2>
-      <label>黃
-      <input type="radio" name="color" id="">
-      </label>      
-      <label>綠
-      <input type="radio" name="color" id="">
-      </label>      
-      <label>紅
-      <input type="radio" name="color" id="">
-      </label>
-    </fieldset>
-    <fieldset>      
-      <h2>喜歡吃的飲食類型</h2>
-      <label>中式
-      <input type="radio" name="drink" id="">
-      </label>
-      <label>義式
-      <input type="radio" name="drink" id="">
-      </label>
-      <label>日式
-      <input type="radio" name="drink" id="">
-      </label>
-      <label>韓式
-      <input type="radio" name="drink" id="">
-      </label>
-      <label>美式
-      <input type="radio" name="drink" id="">
-      </label>
-      <label>泰式
-      <input type="radio" name="drink" id="">
-      </label>
-    </fieldset>
-    <fieldset>最想去的國家</fieldset>
-    </form>
-		<div class="foot">
-			<button class="sbm" type="submit">提交</button>
-			<button class="refresh" type="submit">清除表單</button>
-		</div>
+		<tbody>
+			<form>
+				<fieldset>
+					<h2>
+						<label for="name">姓名<span>*</span></label>
+					</h2>
+					<input
+						class="border-style"
+						type="text"
+						placeholder="您的回答"
+						id="name"
+						required
+					/>
+				</fieldset>
+				<fieldset>
+					<h2>
+						<label for="mail">信箱<span>*</span></label>
+					</h2>
+					<input
+						class="border-style"
+						type="email"
+						placeholder="您的回答"
+						id="mail"
+						required
+					/>
+				</fieldset>
+				<fieldset>
+					<h2><label for="birth">生日</label></h2>
+					<p>日期</p>
+					<input class="border-style" type="date" id="birth" />
+				</fieldset>
+				<fieldset>
+					<h2><label for="teach">想跟老師說悄悄話</label></h2>
+					<textarea
+						class="msg"
+						id="teach"
+						cols="30"
+						rows="10"
+						placeholder="您的回答"
+					></textarea>
+				</fieldset>
+				<fieldset class="row">
+					<h2>喜歡的顏色</h2>
+					<label> <input type="radio" name="color" checked /> 黃 </label>
+					<label> <input type="radio" name="color" /> 綠 </label>
+					<label> <input type="radio" name="color" /> 紅 </label>
+				</fieldset>
+				<fieldset class="row">
+					<h2>喜歡吃的飲食類型</h2>
+					<label> <input type="checkbox" name="drink" id="" /> 中式 </label>
+					<label> <input type="checkbox" name="drink" id="" /> 義式 </label>
+					<label> <input type="checkbox" name="drink" id="" /> 日式 </label>
+					<label> <input type="checkbox" name="drink" id="" /> 韓式 </label>
+					<label> <input type="checkbox" name="drink" id="" /> 美式 </label>
+					<label> <input type="checkbox" name="drink" id="" /> 泰式 </label>
+				</fieldset>
+				<fieldset>
+					<h2>最想去的國家</h2>
+					<select>
+						<option value="請選擇" disabled selected>請選擇</option>
+						<optgroup label="美洲">
+							<option value="墨西哥">墨西哥</option>
+							<option value="加拿大">加拿大</option>
+							<option value="美國">美國</option>
+						</optgroup>
+						<optgroup label="亞洲">
+							<option value="蒙古">蒙古</option>
+							<option value="日本">日本</option>
+							<option value="韓國">韓國</option>
+						</optgroup>
+						<optgroup label="歐洲">
+							<option value="法國">法國</option>
+							<option value="英國">英國</option>
+							<option value="德國">德國</option>
+						</optgroup>
+					</select>
+				</fieldset>
+				<div class="foot">
+					<button class="sbm" type="submit">提交</button>
+					<button class="refresh" type="reset">清除表單</button>
+				</div>
+			</form>
+		</tbody>
 	</body>
 </html>
