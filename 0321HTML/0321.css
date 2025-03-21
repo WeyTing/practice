@@ -1,0 +1,29 @@
+/* 固定框度數字 %會適應視窗  px pt pc 絕對單位*/
+body {
+	width: 500px;
+}
+
+.item {
+	background-color: aqua;
+	padding: 20px 0;
+	width: 50%;
+	margin: 0 auto 0 auto;
+}
+
+h1 {
+	background-color: #fff;
+	width: 50%;
+}
+.item2 {
+	background-color: aqua;
+	padding: 20px 0;
+	width: 50vw;
+	margin: 10px auto 0 auto;
+}
+
+.item3 {
+	background-color: aqua;
+	padding: 20px 0;
+	width: 400pt;
+	margin: 10px auto 0 auto;
+}
