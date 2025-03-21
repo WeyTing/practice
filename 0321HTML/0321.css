@@ -1,9 +1,6 @@
 /* 固定框度數字 %會適應視窗  px pt pc 絕對單位*/
-body {
-	width: 500px;
-}
 
-.item {
+.item1 {
 	background-color: aqua;
 	padding: 20px 0;
 	width: 50%;
@@ -26,4 +23,77 @@ h1 {
 	padding: 20px 0;
 	width: 400pt;
 	margin: 10px auto 0 auto;
+}
+
+/* overflow hidden 爆板時配合使用 */
+.card {
+	background-color: blueviolet;
+	border-width: 10px 24px;
+	border-style: dotted dashed;
+	border-color: red yellow green;
+	width: 60%;
+	overflow: hidden;
+	margin: 200px auto;
+	min-width: 700px;
+	max-width: 800px;
+}
+
+.card-title {
+	font-size: 40px;
+}
+
+.outside {
+	font-size: 0;
+}
+.item {
+	width: 100px;
+	height: 100px;
+	background-color: burlywood;
+	margin: 100px auto 0 auto;
+	font-size: 100px;
+}
+.box {
+	background-color: pink;
+	width: 400px;
+	margin: 40px 40px 0 4px;
+	border: 10px solid green;
+	padding: 40px;
+}
+/* padding*2+border*2+margin*n(幾個卡片)*2+width	=總width*/
+/* float 配合width */
+.product {
+	background-color: aquamarine;
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.box2 {
+	background-color: coral;
+	width: 187px;
+	margin: 10px;
+	border: 2px double yellow;
+	padding: 20px;
+	float: left;
+	font-family: "Bytesized", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.outbox {
+	background-color: brown;
+	overflow: hidden;
+	width: 100%;
+	margin: 50px auto;
+}
+.inbox {
+	width: 100%;
+	font-family: "Bytesized", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.bytesized-regular {
+	font-family: "Bytesized", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
