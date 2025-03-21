@@ -3,7 +3,7 @@ body {
 }
 div {
 	border: 0.5px solid #dadce0;
-	border-radius: 6px;
+	border-radius: 0 0 6px 6px;
 	width: 35%;
 	margin: 0 auto 10px auto;
 	background-color: #fff;
@@ -23,6 +23,9 @@ h1 {
 	font-size: 32px;
 	margin: 0% 0 12px 0;
 }
+hr {
+	color: #dadce0;
+}
 h2 {
 	font-size: 16px;
 	margin: 4px 0 20px 0;
@@ -31,7 +34,7 @@ h2 {
 p {
 	font-size: 14px;
 	font-weight: 100;
-	margin: 0 0 14px 0;
+	margin: 8px 0 14px 0;
 }
 span {
 	color: #d93025;
@@ -44,6 +47,21 @@ label {
 	margin-bottom: 10px;
 	font-size: 12pt;
 	cursor: pointer;
+}
+
+.a-color {
+	color: #1a73e8;
+}
+.title-ct {
+	font-size: 14px;
+	margin: 6px 0 6px 0;
+	font-weight: 50;
+}
+.line {
+	margin: 0 auto -7px auto;
+	border-radius: 6px;
+	height: 8px;
+	background-color: #673ab7;
 }
 
 .border-style {
