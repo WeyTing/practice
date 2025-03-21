@@ -51,7 +51,7 @@ for (let i = 1; i <= 10; i++) {
 function multiplicationTable(n) {
 	let result = "";
 	for (let i = 1; i <= 9; i++) {
-		result += `${n}*${i}=${n * i}\n`;
+		result += `${n}*${i}=${n * i}\n`; // gpt修改提供\n作為換行符
 	}
 	return result;
 }
@@ -71,6 +71,7 @@ console.log(max(2, 3));
 console.log(max(100, 57));
 console.log(max(23, 57));
 
+// const 不能重新賦值
 const arr = [];
-arr.push(1, 2, 3);
+arr.push(123);
 arr = [123];
