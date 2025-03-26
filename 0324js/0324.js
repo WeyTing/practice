@@ -70,7 +70,39 @@ for (let i = 1; i <= 4; i++) {
 //
 //aaa.forEach((el) => console.log(el));
 
-//API
-const url = "https://jsonplaceholder.typicode.com/posts";
-const result = fetch(url);
-console.log(result);
+//API then然後  //////////////////////////////////////0325
+//
+const url =
+	"https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json";
+
+try {
+	const result = await fetch(url);
+	const stations = await result.json(); //非同步可使用await
+	stations
+		.filter(({ available_rent_bikes }) => {
+			return available_rent_bikes >= 50;
+		})
+		.forEach(({ sna }) => {
+			console.log(sna);
+		});
+} catch {
+	alert("系統忙碌中");
+}
+
+//const result = fetch(url)
+
+//result
+//	.then((resp) => resp.json())
+//	.then((youbikes) => {
+//		youbikes
+//			.filter((bike) => bike.available_rent_bikes >= 50)
+//			.forEach((bike) => {
+//				console.log(bike.sna);
+//			});
+//	});
+//.catch err 例外處理
+//
+
+setTimeout(() => {
+	console.log("肚子餓了");
+}, 5000);
