@@ -23,12 +23,14 @@ a#home-link {
 /*	color: burlywood;
 /*}
 
-/* +找鄰居 title+p 選第一個P(同一層)~ 全部的p(同一層 title p = 全部的p */
+/* +找鄰居 title+p 選第一個P(同一層)~ 全部的p(同一層 的p */
 
 .title ~ p {
-	background-color: bisque;
+	background-color: bisque !important;
 	color: red;
+	background-color: aqua;
 }
+/* 屬性選取器*/
 
 .list-mom {
 	margin: 100px;
@@ -47,4 +49,24 @@ a#home-link {
 h3 {
 	font-size: 100px;
 	text-decoration: underline yellow wavy;
+}
+
+.food:visited {
+	background-color: white;
+	color: blue;
+}
+.food:focus {
+	background-color: green;
+}
+.food:hover {
+	background-color: yellow;
+	color: brown;
+}
+.food:active {
+	background-color: black;
+	color: cornsilk;
+}
+.align {
+	width: 400px;
+	text-align: justify;
 }
