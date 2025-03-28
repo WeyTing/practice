@@ -1,0 +1,50 @@
+.link {
+	background-color: blue;
+	color: aqua;
+}
+
+a#home-link {
+	background-color: darkgray;
+	color: brown;
+}
+/* 空白與大小於符號適用於不同層內容 */
+.news-list > li {
+	/* .news-list裡第二層的li*/
+	font-family: fantasy;
+	color: aqua;
+}
+/*.news-list  li {           /* .news-list裡全部的li*/
+/*	font-family: fantasy;
+/*	color: aqua;
+/*} */
+
+/*.news-list li,
+/*.item-list li {
+/*	color: burlywood;
+/*}
+
+/* +找鄰居 title+p 選第一個P(同一層)~ 全部的p(同一層 title p = 全部的p */
+
+.title ~ p {
+	background-color: bisque;
+	color: red;
+}
+
+.list-mom {
+	margin: 100px;
+	background-color: blanchedalmond;
+}
+.list-item + .list-item {
+	border-top: 2px solid gray;
+}
+.first-item > p {
+	color: brown;
+}
+.third-item {
+	background-color: bi;
+}
+/* 位置 顏色 樣式  text-decoration*/
+h3 {
+	font-size: 100px;
+	text-decoration: underline yellow wavy;
+}
