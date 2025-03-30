@@ -1,0 +1,77 @@
+/* overflow 避免父容器壞掉*/
+section {
+  border: 1px solid #feedde;
+  border-radius: 16px;
+  background-color: white;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  overflow: hidden;
+}
+h1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0 10px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+span {
+  font-size: 16px;
+  float: right;
+}
+a {
+  color: #1654b9;
+  font-weight: 700;
+}
+.card {
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  box-sizing: content-box;
+  float: left;
+  margin: 10px;
+  padding: 20px;
+  width: 217px;
+}
+/* white-space nowrap 超出的文字不會換行*/
+h2 {
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 4px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+p {
+  font-size: 12px;
+  line-height: 20px;
+}
+.foot {
+  font-size: 16px;
+  text-align: center;
+
+  margin-bottom: 10px;
+}
+.salary {
+  color: #ff7800;
+  font-size: 12px;
+  line-height: 20px;
+  float: left;
+}
+
+a:hover {
+  color: #4e91ff;
+}
+a:visited {
+  color: #78269f;
+}
+.star {
+  font-size: 18px;
+  color: #dddddd;
+}
+.star:visited {
+  color: #dddddd;
+}
+.star:hover {
+  color: #ff9100;
+}
