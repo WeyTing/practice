@@ -1,0 +1,43 @@
+body {
+	margin: 100px;
+}
+/* child會選取同階層裡第一個元素 空白影響選取器範圍*/
+/*.box:first-child {
+	background-color: brown;
+}
+
+.box :first-child {
+	background-color: chocolate;
+}
+
+.box p:last-child {
+	background-color: aqua;
+}
+.box:last-child {
+	background-color: aqua;
+}*/
+/* type會選取容器內所有第一個元素ex p span div 同時出現都會選取*/
+.box :first-of-type {
+	background-color: purple;
+}
+
+.box :last-of-type {
+	background-color: brown;
+}
+/* 元素:not(裡面放不想要變的元素) 其他都會變*/
+p:not(.point) {
+	background-color: yellow;
+}
+
+/*ul li:nth-of-type(odd) {
+	background-color: cadetblue;
+}*/
+ul li:nth-of-type(2n) {
+	background-color: whitesmoke;
+}
+ul li:nth-of-type(4n + 3) {
+	border: 1px solid gold;
+}
+ul li:nth-of-type(n + 10) {
+	border-bottom: dotted red;
+}
