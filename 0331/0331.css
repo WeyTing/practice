@@ -4,6 +4,16 @@ body {
 /* child會選取同階層裡第一個元素 空白影響選取器範圍*/
 /*.box:first-child {
 	background-color: brown;
+} */
+header {
+	height: 100px;
+	background-color: aqua;
+	text-align: center;
+}
+ul a {
+	line-height: 100px;
+	background-color: violet;
+	padding: 20px;
 }
 
 .box :first-child {
@@ -15,7 +25,8 @@ body {
 }
 .box:last-child {
 	background-color: aqua;
-}*/
+}
+*/
 /* type會選取容器內所有第一個元素ex p span div 同時出現都會選取*/
 .box :first-of-type {
 	background-color: purple;
@@ -25,9 +36,9 @@ body {
 	background-color: brown;
 }
 /* 元素:not(裡面放不想要變的元素) 其他都會變*/
-p:not(.point) {
+/*p:not(.point) {
 	background-color: yellow;
-}
+}*/
 
 /*ul li:nth-of-type(odd) {
 	background-color: cadetblue;
@@ -40,4 +51,73 @@ ul li:nth-of-type(4n + 3) {
 }
 ul li:nth-of-type(n + 10) {
 	border-bottom: dotted red;
+}
+.text-space {
+	letter-spacing: 3px;
+	word-spacing: 20px;
+}
+
+/* flex */ /* object fit 適合圖片的語法*/
+.card {
+	background-color: wheat;
+	margin: 100px;
+	padding: 20px;
+	width: 600px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.card img {
+	width: 260px;
+	height: 160px;
+	margin: 5px;
+	float: left;
+}
+.card div {
+	width: 50%;
+	float: right;
+}
+.card h2 {
+	font-weight: 700;
+	margin: 3px;
+	text-align: center;
+}
+.card p {
+	font-size: 13px;
+}
+.card:nth-last-of-type(2n) img {
+	width: 260px;
+	height: 160px;
+	margin: 5px;
+	float: right;
+}
+.card:nth-last-of-type(2n) div {
+	width: 50%;
+	float: left;
+}
+
+.card3 .cardimg {
+	background-color: bisque;
+	overflow: hidden;
+}
+
+.float-wrap {
+	margin-top: 100px;
+	background-color: brown;
+}
+.box3 {
+	width: 200px;
+	height: 200px;
+	float: left;
+}
+.box3:first-of-type {
+	background-color: yellow;
+}
+.box3:nth-of-type(2) {
+	background-color: green;
+}
+.clear {
+	clear: right;
+}
+.test {
+	background-color: purple;
 }
