@@ -1,0 +1,12 @@
+import { hey, a, hello } from "./ccc.js";
+import myname from "./ccc.js";
+import dayjs from "dayjs";
+hello();
+console.log(a);
+hey();
+console.log(hello);
+console.log(myname);
+myname();
+console.log(dayjs);
+hello();
+myname();
