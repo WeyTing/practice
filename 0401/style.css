@@ -1,0 +1,9 @@
+@import "tailwindcss";
+/* daisyui*/
+@plugin "daisyui" {
+	themes: all;
+}
+
+.btn-pri {
+	@apply px-5 py-2 mx-10 my-3 inline-block text-white rounded-2xl bg-amber-900 hover:bg-amber-300;
+}
