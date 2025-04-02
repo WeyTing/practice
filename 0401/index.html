@@ -9,10 +9,31 @@
 	</head>
 	<body>
 		<main class="container mx-auto py-10">
-			<h1 class="text-6xl font-thin">大標題</h1>
-			<a href="#" class="btn-pri">click</a>
-			<a href="#" class="btn-pri">click2</a>
-			<a href="#" class="btn-pri">click3</a>
+			<div x-data="test">
+				<h1 class="text-6xl font-thin">超大標題</h1>
+				<!--prevent  preventDefault 把預設行為停下來-->
+				<a href="#" @click.prevent="hideArticle" class="btn-pri">click3</a>
+				<article class="text-3xl" x-show="show">
+					免費電影外國幻想一路專欄室內長期新聞上去手裡你怎麼角色基礎，房間有着，臺灣民眾範圍內收購還能位於承諾台北所有辦法高效種類動力這就是，如何比較光臨有了看來，簡體鐵路蘋果會有具備留學成績很好很多屬性不夠改造發送，時尚丈夫公佈以往說完靈魂深刻印象失望體制部隊那麼多大眾，聰明提出了程式定位過去寬頻一段時間，信號就好認證我也高速列表商機很快輕鬆，大眾手中今日傷害工藝為何，良好比較把他如下和他，你還遺憾，求助不管但他管理系統服飾，參與本次有意涉及數碼神話那個的錢如果你轉移歡迎強調，多麼其實人數私人雖然甚至加快手冊，各地邀請構成早上目錄很好，劇情僅僅期待好像再說隨着某個兩位課程，你就治療外貿儀器東方賓館歡迎剛剛打電話導致經濟口氣姑娘，全身英語為止某個你們的目標利益等待，順利確保是否那些，電子手段跟我競爭文章，資源放心幫你一陣大師大家都上網西方大多具體，消除下一頁做出職業上門警方用途那天估計，職責一切都低價漸漸，神經你說少女重要水溝宜蘭能學到你怎不來上來提出基地，傳說女子長時間，身體連續汽車之類眾多物理，說了正是身後日常套件中學，公司控制提供一副下載，期限體會符合國外，成員觀看年代夏天裡面帶著，批發。
+				</article>
+				<input type="text" class="input my-5" id="input" x-model="message" />
+				<div id="fresh" x-text="message"></div>
+				<a href="#" @click.prevent="clear" class="btn-pri">clear</a>
+				<hr class="my-3" />
+				<input
+					type="text"
+					class="input my-5"
+					id="input"
+					@keyup.enter="addfoods"
+					x-model="newfood"
+				/>
+				<button @click="addfoods" class="btn">add</button>
+				<ul>
+					<template x-for="food in foods">
+						<li x-text="food"></li>
+					</template>
+				</ul>
+			</div>
 		</main>
 	</body>
 </html>
