@@ -35,9 +35,11 @@ const Main = () => ({
     const token = localStorage.getItem(TOKEN_NAME)
     if (token) {
       axios.defaults.headers.common["Authorization"] = token
+      localStorage.removeItem(TOKEN_NAME)
       const resp = await axios.delete(url)
       console.log(resp)
       this.showlogin()
+      this.islogin = false
     }
   },
   async login() {
