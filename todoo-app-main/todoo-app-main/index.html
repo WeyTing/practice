@@ -28,36 +28,47 @@
     <main class="px-6 todo-app main" x-data="Main">
       <header>
         <nav class="navbar">
-          <a class="loginLink" @click.prevent="showlogin" href="#login">登入</a>
-          <a class="signUpLink" @click.prevent="showsignUp" href="#sign_up">註冊</a>
+          <template x-if="!islogin">
+            <div>
+              <a class="loginLink" @click.prevent="showlogin" href="#login">登入</a>
+              <a class="signUpLink" @click.prevent="showsignUp" href="#sign_up">註冊</a>
+            </div>
+          </template>
+          <template x-if="islogin">
+            <div>
+              <a class="signUpLink" href="#sign_out" @click.prevent="logout">登出</a>
+            </div>
+          </template>
         </nav>
       </header>
 
       <section id="userSection">
         <!-- Login Section start -->
-        <section id="loginSection" x-show="showSection == 'loginSection' ">
-          <h1>登入</h1>
-          <form id="loginForm">
-            <div class="field">
-              <label>
-                <h3>Email</h3>
-                <input type="email" id="loginEmail" autocomplete="off" spellcheck="false" placeholder="Email 信箱" x-model="email" />
-              </label>
-            </div>
+        <template x-if="showSection == 'loginSection' ">
+          <section id="loginSection">
+            <h1>登入</h1>
+            <form id="loginForm">
+              <div class="field">
+                <label>
+                  <h3>Email</h3>
+                  <input type="email" id="loginEmail" autocomplete="off" spellcheck="false" placeholder="Email 信箱" x-model="email" />
+                </label>
+              </div>
 
-            <div class="field">
-              <label>
-                <h3>密碼</h3>
-                <input type="password" id="loginPassword" autocomplete="off" spellcheck="false" placeholder="密碼，至少需要 6 個字" x-model="password" />
-              </label>
-            </div>
+              <div class="field">
+                <label>
+                  <h3>密碼</h3>
+                  <input type="password" id="loginPassword" autocomplete="off" spellcheck="false" placeholder="密碼，至少需要 6 個字" x-model="password" />
+                </label>
+              </div>
 
-            <div class="items-center justify-between block sm:flex field">
-              <button class="cursor-pointer" @click.prevent="login">登入</button>
-              <div class="text-xl text-gray-600">還沒有帳號嗎？<a href="#" class="text-link signUpLink" @click.prevent="showignUp">註冊</a>一個吧！</div>
-            </div>
-          </form>
-        </section>
+              <div class="items-center justify-between block sm:flex field">
+                <button class="cursor-pointer" @click.prevent="login">登入</button>
+                <div class="text-xl text-gray-600">還沒有帳號嗎？<a href="#" class="text-link signUpLink" @click.prevent="showignUp">註冊</a>一個吧！</div>
+              </div>
+            </form>
+          </section>
+        </template>
         <!-- Login Section end -->
 
         <!-- Sign Up Section start -->
