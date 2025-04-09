@@ -9,6 +9,7 @@ const Main = () => ({
   nickname: "",
   password: "",
   islogin: false,
+  todos: [],
   clearText() {
     this.email = ""
     this.nickname = ""
@@ -19,6 +20,7 @@ const Main = () => ({
     if (token) {
       this.islogin = true
       this.showtaskInput()
+      this.getTodos()
     }
   },
   showtaskInput() {
@@ -29,6 +31,25 @@ const Main = () => ({
   },
   showsignUp() {
     this.showSection = "signUpSection"
+  },
+  async getTodos() {
+    //要向哪個網址請求api
+    const url = "https://todoo.5xcamp.us/todos"
+    // 本機的存儲資料
+    const token = localStorage.getItem(TOKEN_NAME)
+    //如果存在的話
+    if (token) {
+      //headers資料
+      const config = { headers: { Authorization: token } }
+      try {
+        const resp = await axios.get(url, config)
+        const todos = resp.data.todos
+        //console.log(todos)
+        this.todos = todos
+      } catch (err) {
+        console.log(err)
+      }
+    }
   },
   async logout() {
     const url = "https://todoo.5xcamp.us/users/sign_out"
@@ -71,6 +92,7 @@ const Main = () => ({
         this.clearText()
         this.islogin = true
         this.showtaskInput()
+        this.getTodos()
       } catch (err) {
         console.log(err)
         Swal.fire({
