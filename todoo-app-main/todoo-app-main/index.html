@@ -125,7 +125,8 @@
               </div>
               <div class="item-control">
                 <a href="#" class="edit"><img class="icon" src="src/assets/pen-to-square-solid.svg" /></a>
-                <a href="#" class="delete"><img class="icon" src="src/assets/trash-can-solid.svg" /></a>
+                <!--x-bind:data-id="todo.id"-->
+                <a href="#" class="delete" @click.prevent="deleteTodos(todo.id)"><img class="icon" src="src/assets/trash-can-solid.svg" /></a>
               </div>
             </li>
           </template>

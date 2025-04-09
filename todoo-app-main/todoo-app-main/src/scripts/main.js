@@ -33,6 +33,27 @@ const Main = () => ({
   showsignUp() {
     this.showSection = "signUpSection"
   },
+
+  //$el alpine內建方法 dataset作法
+  async deleteTodos(id) {
+    const token = localStorage.getItem(TOKEN_NAME)
+    //console.log(this.$el.dataset.id)
+    //console.log(url)
+    if (token) {
+      //const id = this.$el.dataset.id html <!--x-bind:data-id="todo.id"-->
+      const url = `https://todoo.5xcamp.us/todos/${id}`
+      const config = { headers: { Authorization: token } }
+      try {
+        this.$el.parentNode.parentNode.remove()
+        const resp = await axios.delete(url, config)
+        console.log(resp)
+
+        //this.getTodos() //直接拿api
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  },
   async addTodos() {
     const token = localStorage.getItem(TOKEN_NAME)
     if (token && this.task != "") {
@@ -42,14 +63,17 @@ const Main = () => ({
 
       try {
         const resp = await axios.post(url, todoData, config) //實際上傳 透過post
+        this.todos.unshift(resp.data) //表視覺效果 無實際上傳
         console.log(resp)
         console.log(resp.data)
         this.task = ""
-        this.todos.unshift(resp.data) //表視覺效果 無實際上傳
+
+        //this.getTodos() 再取一次api
       } catch (err) {
         console.log(err)
         Swal.fire({
           title: "錯誤",
+          html: "無法刪除，請稍後在試",
           icon: "error",
           confirmButtonText: "確認",
         })
@@ -61,10 +85,10 @@ const Main = () => ({
     //this.task = ""
   },
   async getTodos() {
-    //要向哪個網址請求api
-    const url = "https://todoo.5xcamp.us/todos"
     // 本機的存儲資料
     const token = localStorage.getItem(TOKEN_NAME)
+    //要向哪個網址請求api
+    const url = "https://todoo.5xcamp.us/todos"
     //如果存在的話
     if (token) {
       //headers資料
