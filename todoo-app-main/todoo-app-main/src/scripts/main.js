@@ -34,12 +34,26 @@ const Main = () => ({
     const url = "https://todoo.5xcamp.us/users/sign_out"
     const token = localStorage.getItem(TOKEN_NAME)
     if (token) {
-      axios.defaults.headers.common["Authorization"] = token
-      localStorage.removeItem(TOKEN_NAME)
-      const resp = await axios.delete(url)
-      console.log(resp)
-      this.showlogin()
-      this.islogin = false
+      //axios.defaults.headers.common["Authorization"] = token
+
+      try {
+        const config = { headers: { Authorization: token } }
+        await axios.delete(url, config)
+      } catch {
+      } finally {
+        localStorage.removeItem(TOKEN_NAME)
+        //axios.defaults.headers.common["Authorization"] = null
+        this.islogin = false
+        this.showlogin()
+        Swal.fire({
+          title: "已登出",
+          icon: "error",
+          confirmButtonText: "確認",
+        })
+      }
+      //localStorage.removeItem(TOKEN_NAME)
+      //const resp = await axios.delete(url)
+      //console.log(resp)
     }
   },
   async login() {
@@ -58,7 +72,7 @@ const Main = () => ({
         this.islogin = true
         this.showtaskInput()
       } catch (err) {
-        console.log(err.response.data)
+        console.log(err)
         Swal.fire({
           title: "OOPS",
           html: err.response.data.message,
