@@ -10,6 +10,7 @@ const Main = () => ({
   password: "",
   islogin: false,
   todos: [],
+  task: "",
   clearText() {
     this.email = ""
     this.nickname = ""
@@ -31,6 +32,33 @@ const Main = () => ({
   },
   showsignUp() {
     this.showSection = "signUpSection"
+  },
+  async addTodos() {
+    const token = localStorage.getItem(TOKEN_NAME)
+    if (token && this.task != "") {
+      const url = "https://todoo.5xcamp.us/todos"
+      const todoData = { todo: { content: this.task } }
+      const config = { headers: { Authorization: token } }
+
+      try {
+        const resp = await axios.post(url, todoData, config) //實際上傳 透過post
+        console.log(resp)
+        console.log(resp.data)
+        this.task = ""
+        this.todos.unshift(resp.data) //表視覺效果 無實際上傳
+      } catch (err) {
+        console.log(err)
+        Swal.fire({
+          title: "錯誤",
+          icon: "error",
+          confirmButtonText: "確認",
+        })
+      }
+    }
+
+    //console.log(this.task)
+    //this.todos.push(this.task)
+    //this.task = ""
   },
   async getTodos() {
     //要向哪個網址請求api
@@ -66,6 +94,7 @@ const Main = () => ({
         //axios.defaults.headers.common["Authorization"] = null
         this.islogin = false
         this.showlogin()
+        this.todos = []
         Swal.fire({
           title: "已登出",
           icon: "error",
@@ -120,6 +149,7 @@ const Main = () => ({
         this.showlogin()
       } catch (err) {
         console.log(err.response.data.error.join(""))
+        this.clearText()
         Swal.fire({
           title: "OOPS",
           html: err.response.data.error.join("<br />"),

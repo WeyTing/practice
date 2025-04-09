@@ -108,8 +108,8 @@
       <!-- TODO Section start -->
       <section id="taskSection" x-show="showSection == 'taskSection'">
         <form id="todoForm">
-          <input type="text" id="taskInput" autocomplete="off" spellcheck="false" placeholder="做點重要的事吧..." />
-          <button id="addTodoBtn">新增</button>
+          <input type="text" id="taskInput" autocomplete="off" spellcheck="false" placeholder="做點重要的事吧..." x-model="task" />
+          <button id="addTodoBtn" @click.prevent="addTodos" @keyup.enter="addTodos">新增</button>
         </form>
       </section>
       <section class="todo-list">
@@ -120,7 +120,7 @@
               <div class="item-content">
                 <label>
                   <input type="checkbox" />
-                  <p class="content">我要學 Vue</p>
+                  <p class="content" x-text="todo.content"></p>
                 </label>
               </div>
               <div class="item-control">
