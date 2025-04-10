@@ -1,0 +1,39 @@
+body {
+	margin: 100px 0 0 100px;
+}
+
+.box {
+	border: 2px solid yellow;
+	background-color: orange;
+	width: 40%;
+	height: 600px;
+	/*	background-image: url(../resouce/下載.jfif), url(../resouce/patrick.jpg);
+	background-repeat: no-repeat;
+	background-position: right 30px bottom 10px, left top;*/
+	/* background-size: 200px 200px; */
+	background-image: linear-gradient(to right top, red, blue);
+}
+.box:hover {
+	background-color: skyblue;
+}
+.box2 {
+	background-color: violet;
+	width: 40%;
+	border-radius: 50%/20%;
+	height: 400px;
+	margin: 100px;
+	outline: dotted red;
+	outline-offset: 20px;
+}
+ul {
+	/*list-style-image: url(../resouce/下載.jfif);*/
+	list-style-position: inside;
+	list-style-type: "😪👲";
+}
+p {
+	height: 200px;
+	width: 40%;
+	background-color: aqua;
+	overflow: auto;
+	box-shadow: 10px 8px 50px 5px gray;
+}
