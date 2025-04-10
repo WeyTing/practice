@@ -11,10 +11,13 @@ const Main = () => ({
   islogin: false,
   todos: [],
   task: "",
+  editing: null,
+  tempContent: "",
   clearText() {
     this.email = ""
     this.nickname = ""
     this.password = ""
+    this.tempContent = ""
   },
   init() {
     const token = localStorage.getItem(TOKEN_NAME)
@@ -35,6 +38,27 @@ const Main = () => ({
   },
 
   //$el alpine內建方法 dataset作法
+  modifyOpen() {
+    this.editing = this.todo.id
+  },
+  async modifyTodos(id, tempContent) {
+    const token = localStorage.getItem(TOKEN_NAME)
+    if (token && tempContent != " ") {
+      const url = `https://todoo.5xcamp.us/todos/${id}`
+      const modifyData = { todo: { content: this.tempContent } }
+      const config = { headers: { Authorization: token } }
+      try {
+        const resp = await axios.put(url, modifyData, config)
+        console.log(resp)
+        this.editing = null
+        this.clearText()
+        this.getTodos()
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  },
+
   async deleteTodos(id) {
     const token = localStorage.getItem(TOKEN_NAME)
     //console.log(this.$el.dataset.id)
@@ -44,10 +68,10 @@ const Main = () => ({
       const url = `https://todoo.5xcamp.us/todos/${id}`
       const config = { headers: { Authorization: token } }
       try {
-        this.$el.parentNode.parentNode.remove()
+        //this.$el.parentNode.parentNode.remove()
         const resp = await axios.delete(url, config)
         console.log(resp)
-
+        this.getTodos()
         //this.getTodos() //直接拿api
       } catch (err) {
         console.log(err)
@@ -63,11 +87,11 @@ const Main = () => ({
 
       try {
         const resp = await axios.post(url, todoData, config) //實際上傳 透過post
-        this.todos.unshift(resp.data) //表視覺效果 無實際上傳
+        //this.todos.unshift(resp.data) //表視覺效果 無實際上傳
         console.log(resp)
         console.log(resp.data)
         this.task = ""
-
+        this.getTodos()
         //this.getTodos() 再取一次api
       } catch (err) {
         console.log(err)

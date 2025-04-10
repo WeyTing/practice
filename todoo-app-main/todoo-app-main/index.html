@@ -118,13 +118,18 @@
           <template x-for="todo in todos">
             <li>
               <div class="item-content">
-                <label>
+                <label x-show="editing !== todo.id">
                   <input type="checkbox" />
                   <p class="content" x-text="todo.content"></p>
                 </label>
+                <div x-show="editing ==todo.id" class="edit-form">
+                  <input type="text" x-model="tempContent" @keyup.enter="modifyTodos(todo.id)" class="border p-1 rounded" />
+                  <button @click.prevent="modifyTodos(todo.id)" class="ml-2 text-blue-500 cursor-pointer">儲存</button>
+                  <button @click.prevent="editing = false" class="ml-1 cursor-pointer text-gray-500">取消</button>
+                </div>
               </div>
               <div class="item-control">
-                <a href="#" class="edit"><img class="icon" src="src/assets/pen-to-square-solid.svg" /></a>
+                <a href="#" class="edit" @click.prevent="modifyOpen"><img class="icon" src="src/assets/pen-to-square-solid.svg" /></a>
                 <!--x-bind:data-id="todo.id"-->
                 <a href="#" class="delete" @click.prevent="deleteTodos(todo.id)"><img class="icon" src="src/assets/trash-can-solid.svg" /></a>
               </div>
