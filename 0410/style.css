@@ -30,10 +30,23 @@ ul {
 	list-style-position: inside;
 	list-style-type: "😪👲";
 }
-p {
+/*p {
 	height: 200px;
 	width: 40%;
 	background-color: aqua;
 	overflow: auto;
-	box-shadow: 10px 8px 50px 5px gray;
+	box-shadow: 10px 8px 50 px 5px gray;
+	float: ;
+}*/
+
+section {
+	min-width: 400px;
+	margin: 50px 100px;
+	background-color: aquamarine;
+}
+.boxcollpase {
+	margin: 25px;
+	width: 400px;
+	height: 400px;
+	background-color: greenyellow;
 }
