@@ -138,16 +138,12 @@
 	margin: 25px auto;
 	gap: 10px;
 	background-color: yellowgreen;
-	justify-content: end;
-	flex-wrap: wrap;
+	justify-content: start;
 }
 /*content 指內部元素全部的盒子 items指內部元素裡的文字 盒子內的東西*/
 .flex-box {
-	width: 100px;
 	background-color: orange;
-}
-
-.flex-box:nth-of-type(3) {
-	justify-self: start;
-	align-self: center;
+	height: 100px;
+	flex-basis: 0;
+	flex-grow: 1;
 }
