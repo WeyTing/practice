@@ -1,0 +1,84 @@
+section {
+	max-width: 600px;
+	margin: 10px auto;
+	background-color: wheat;
+}
+.box {
+	width: calc(80% - 50px);
+	margin: 0 auto;
+	height: 300px;
+	background-color: var(--default-color);
+}
+
+.box2 {
+	width: calc(33.33% - 20px);
+	display: inline-block;
+	margin: 0;
+	height: 300px;
+	background-color: salmon;
+}
+
+.box2 + .box2 {
+	margin-left: 26px;
+}
+
+.side {
+	max-width: 300px;
+	margin: 20px 0 0 0;
+	position: relative;
+}
+.box3 {
+	width: 100%;
+	height: calc(--default-height);
+	position: absolute;
+	background-color: skyblue;
+}
+.border-t {
+	width: 20px;
+	border-top: 10px solid transparent;
+	border-right: 10px solid green;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid transparent;
+}
+.clip {
+	width: 100px;
+	height: 100px;
+	background-color: violet;
+	clip-path: polygon(0 100%, 10% 0, 100% 0);
+}
+.hi {
+	font-size: 30px;
+	font-weight: 900;
+	position: relative;
+	z-index: 2;
+}
+.hi::after {
+	content: "這裡是after";
+}
+
+.hi:hover::before {
+	content: "";
+	position: absolute;
+	color: plum;
+	border-left: 20px solid green;
+	border-bottom: 20px solid transparent;
+	z-index: -1;
+}
+h1 {
+	font-size: 60px;
+	font-weight: bold;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+h1::before {
+	content: "";
+	background-color: red;
+	border-radius: 4px;
+	width: 100px;
+	height: 4px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+}
