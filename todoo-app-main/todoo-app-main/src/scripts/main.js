@@ -27,6 +27,10 @@ const Main = () => ({
       this.getTodos()
     }
   },
+  removeTodo(todos, id) {
+    const Idx = todos.findIndex((todo) => todo.id == id)
+    if (Idx >= 0) todos.splice(Idx, 1)
+  },
   showtaskInput() {
     this.showSection = "taskSection"
   },
@@ -67,11 +71,12 @@ const Main = () => ({
       //const id = this.$el.dataset.id html <!--x-bind:data-id="todo.id"-->
       const url = `https://todoo.5xcamp.us/todos/${id}`
       const config = { headers: { Authorization: token } }
+      this.removeTodo(this.todos, id)
       try {
         //this.$el.parentNode.parentNode.remove()
         const resp = await axios.delete(url, config)
         console.log(resp)
-        this.getTodos()
+        //this.getTodos()
         //this.getTodos() //直接拿api
       } catch (err) {
         console.log(err)

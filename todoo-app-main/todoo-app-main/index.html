@@ -122,7 +122,7 @@
                   <input type="checkbox" />
                   <p class="content" x-text="todo.content"></p>
                 </label>
-                <div x-show="editing ==todo.id" class="edit-form">
+                <div x-show="editing == todo.id" class="edit-form">
                   <input type="text" x-model="tempContent" @keyup.enter="modifyTodos(todo.id)" class="border p-1 rounded" />
                   <button @click.prevent="modifyTodos(todo.id)" class="ml-2 text-blue-500 cursor-pointer">儲存</button>
                   <button @click.prevent="editing = false" class="ml-1 cursor-pointer text-gray-500">取消</button>
