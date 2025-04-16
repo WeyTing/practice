@@ -11,8 +11,10 @@ const Main = () => ({
   islogin: false,
   todos: [],
   task: "",
-  editing: null,
-  tempContent: "",
+  showDialog: false,
+  editText: "",
+  //editing: null,
+  //tempContent: "",
   clearText() {
     this.email = ""
     this.nickname = ""
@@ -29,7 +31,9 @@ const Main = () => ({
   },
   removeTodo(todos, id) {
     const Idx = todos.findIndex((todo) => todo.id == id)
-    if (Idx >= 0) todos.splice(Idx, 1)
+    if (Idx >= 0) {
+      todos.splice(Idx, 1)
+    }
   },
   showtaskInput() {
     this.showSection = "taskSection"
@@ -42,27 +46,52 @@ const Main = () => ({
   },
 
   //$el alpine內建方法 dataset作法
-  modifyOpen() {
-    this.editing = this.todo.id
+  //modifyOpen() {
+  //  this.editing = this.todo.id
+  //},
+  //async modifyTodos(id, tempContent) {
+  //  const token = localStorage.getItem(TOKEN_NAME)
+  //  if (token && tempContent != " ") {
+  //    const url = `https://todoo.5xcamp.us/todos/${id}`
+  //    const modifyData = { todo: { content: this.tempContent } }
+  //    const config = { headers: { Authorization: token } }
+  //    try {
+  //      const resp = await axios.put(url, modifyData, config)
+  //      console.log(resp)
+  //      this.editing = null
+  //      this.clearText()
+  //      this.getTodos()
+  //    } catch (err) {
+  //      console.log(err)
+  //    }
+  //  }
+  //},
+  editTodos(id) {
+    const todo = this.todos.find((todo) => todo.id == id)
+    console.log(todo)
+
+    if (todo) {
+      this.editText = todo.content
+      this.$refs.modal.dataset.id = id
+      console.log(this.$refs.modal.dataset.id)
+      this.$refs.modal.showModal()
+    }
   },
-  async modifyTodos(id, tempContent) {
+  async updateText() {
+    const id = this.$refs.modal.dataset.id
+    console.log(id)
     const token = localStorage.getItem(TOKEN_NAME)
-    if (token && tempContent != " ") {
+    if (id && token) {
       const url = `https://todoo.5xcamp.us/todos/${id}`
-      const modifyData = { todo: { content: this.tempContent } }
+      const todoData = { todo: { content: this.editText } }
       const config = { headers: { Authorization: token } }
       try {
-        const resp = await axios.put(url, modifyData, config)
-        console.log(resp)
-        this.editing = null
-        this.clearText()
-        this.getTodos()
-      } catch (err) {
-        console.log(err)
+        await axios.put(url, todoData, config)
+      } catch {
+        console.log("error")
       }
     }
   },
-
   async deleteTodos(id) {
     const token = localStorage.getItem(TOKEN_NAME)
     //console.log(this.$el.dataset.id)

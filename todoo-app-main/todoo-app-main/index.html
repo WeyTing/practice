@@ -118,18 +118,18 @@
           <template x-for="todo in todos">
             <li>
               <div class="item-content">
-                <label x-show="editing !== todo.id">
+                <label x-show="todo.id">
                   <input type="checkbox" />
                   <p class="content" x-text="todo.content"></p>
                 </label>
-                <div x-show="editing == todo.id" class="edit-form">
+                <!--<div x-show="editing == todo.id" class="edit-form">
                   <input type="text" x-model="tempContent" @keyup.enter="modifyTodos(todo.id)" class="border p-1 rounded" />
                   <button @click.prevent="modifyTodos(todo.id)" class="ml-2 text-blue-500 cursor-pointer">儲存</button>
                   <button @click.prevent="editing = false" class="ml-1 cursor-pointer text-gray-500">取消</button>
-                </div>
+                </div>-->
               </div>
               <div class="item-control">
-                <a href="#" class="edit" @click.prevent="modifyOpen"><img class="icon" src="src/assets/pen-to-square-solid.svg" /></a>
+                <a href="#" class="edit" @click.prevent="editTodos(todo.id)"><img class="icon" src="src/assets/pen-to-square-solid.svg" /></a>
                 <!--x-bind:data-id="todo.id"-->
                 <a href="#" class="delete" @click.prevent="deleteTodos(todo.id)"><img class="icon" src="src/assets/trash-can-solid.svg" /></a>
               </div>
@@ -138,6 +138,21 @@
         </ul>
       </section>
       <!-- TODO Section end -->
+      <dialog id="my_modal_1" x-ref="modal" class="modal">
+        <div class="modal-box">
+          <h3 class="text-lg font-bold">修改事項</h3>
+          <input type="text" class="mt-4 input w-full" x-model="editText" @keyup.enter="updateText" />
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">取消</button>
+            </form>
+            <form method="dialog">
+              <button class="btn bg-primary-content" @click="updateText">更新</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
 
     <footer>
