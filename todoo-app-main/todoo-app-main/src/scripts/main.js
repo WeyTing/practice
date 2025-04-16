@@ -77,6 +77,7 @@ const Main = () => ({
       this.$refs.modal.showModal()
     }
   },
+
   async updateText() {
     const id = this.$refs.modal.dataset.id
     console.log(id)
@@ -86,6 +87,9 @@ const Main = () => ({
       const todoData = { todo: { content: this.editText } }
       const config = { headers: { Authorization: token } }
       try {
+        this.$refs.modal.close() //關掉視窗
+        const todo = this.todos.find((todo) => todo.id == id)
+        todo.content = this.editText //取得最新資料
         await axios.put(url, todoData, config)
       } catch {
         console.log("error")

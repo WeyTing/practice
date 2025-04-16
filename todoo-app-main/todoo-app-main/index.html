@@ -147,9 +147,7 @@
               <!-- if there is a button in form, it will close the modal -->
               <button class="btn">取消</button>
             </form>
-            <form method="dialog">
-              <button class="btn bg-primary-content" @click="updateText">更新</button>
-            </form>
+            <button class="btn bg-primary-content" @click.prevent="updateText">更新</button>
           </div>
         </div>
       </dialog>
