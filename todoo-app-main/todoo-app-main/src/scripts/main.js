@@ -1,5 +1,6 @@
 import axios from "axios"
 import Swal from "sweetalert2"
+import { throttle } from "throttle-debounce"
 
 const TOKEN_NAME = "private"
 
@@ -96,23 +97,38 @@ const Main = () => ({
       }
     }
   },
-  async deleteTodos(id) {
+  async toggleTodo(id) {
     const token = localStorage.getItem(TOKEN_NAME)
-    //console.log(this.$el.dataset.id)
-    //console.log(url)
     if (token) {
-      //const id = this.$el.dataset.id html <!--x-bind:data-id="todo.id"-->
-      const url = `https://todoo.5xcamp.us/todos/${id}`
+      const url = `https://todoo.5xcamp.us/todos/${id}/toggle`
       const config = { headers: { Authorization: token } }
-      this.removeTodo(this.todos, id)
       try {
-        //this.$el.parentNode.parentNode.remove()
-        const resp = await axios.delete(url, config)
-        console.log(resp)
-        //this.getTodos()
-        //this.getTodos() //直接拿api
-      } catch (err) {
-        console.log(err)
+        const resp = await axios.patch(url, null, config)
+        console.log(resp.data.completed_at)
+      } catch {
+        console.log("error")
+      }
+    }
+  },
+  async deleteTodos(id) {
+    if (confirm("確定要刪除嗎?")) {
+      const token = localStorage.getItem(TOKEN_NAME)
+      //console.log(this.$el.dataset.id)
+      //console.log(url)
+      if (token) {
+        //const id = this.$el.dataset.id html <!--x-bind:data-id="todo.id"-->
+        const url = `https://todoo.5xcamp.us/todos/${id}`
+        const config = { headers: { Authorization: token } }
+        this.removeTodo(this.todos, id)
+        try {
+          //this.$el.parentNode.parentNode.remove()
+          const resp = await axios.delete(url, config)
+          console.log(resp)
+          //this.getTodos()
+          //this.getTodos() //直接拿api
+        } catch (err) {
+          console.log(err)
+        }
       }
     }
   },

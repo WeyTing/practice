@@ -119,8 +119,8 @@
             <li>
               <div class="item-content">
                 <label x-show="todo.id">
-                  <input type="checkbox" />
-                  <p class="content" x-text="todo.content"></p>
+                  <input type="checkbox" :checked="todo.completed_at" />
+                  <p class="content" x-text="todo.content" @click="toggleTodo(todo.id)"></p>
                 </label>
                 <!--<div x-show="editing == todo.id" class="edit-form">
                   <input type="text" x-model="tempContent" @keyup.enter="modifyTodos(todo.id)" class="border p-1 rounded" />
