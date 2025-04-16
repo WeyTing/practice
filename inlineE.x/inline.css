@@ -229,3 +229,22 @@ h2 span {
   left: -40px;
   object-fit: contain;
 }
+
+section :nth-of-type(2n) .manage {
+  flex-direction: row-reverse;
+}
+
+section :nth-of-type(2n) .manage::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 160%;
+  height: 100%;
+  background-image: url("https://inline.company/wp-content/uploads/2024/07/New-official-website_v2_hp_background2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
