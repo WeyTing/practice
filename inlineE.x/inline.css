@@ -5,11 +5,12 @@ header {
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.16);
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 9999;
 }
 .navbar {
   width: 1160px;
   margin: 0 auto;
+  padding: 0 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,6 +41,7 @@ header {
 .intro {
   width: 1160px;
   margin: 0 auto;
+  padding: 0 7px;
   height: 100%;
   display: flex;
 }
@@ -55,7 +57,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% auto;
-  z-index: -1;
+  z-index: -2;
 }
 .intro-text {
   margin-top: 120px;
@@ -105,10 +107,125 @@ h2 span {
 .country {
   width: 1160px;
   margin: 0 auto;
-  height: 1000px;
+  margin-top: 140px;
   display: flex;
+  position: relative;
+  padding: 255px 0;
+}
+.country-text {
+  width: 1160px;
+  text-align: center;
+  font-size: 13pt;
+  line-height: 1.9;
+  color: #333333;
+  position: relative;
+  top: -125px;
+}
+.country::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160%;
+  height: 100%;
   background-image: url("https://inline.company/wp-content/uploads/2023/12/New-official-website_v2_country.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100% auto;
+  background-size: cover;
+  z-index: -1;
+}
+.presentation {
+  width: 1160px;
+  margin: 0 auto;
+  text-align: center;
+}
+.presentation span {
+  font-size: 27px;
+  font-weight: 700;
+  color: #ec6300;
+  display: block;
+  margin-bottom: 40px;
+}
+.presentation p {
+  font-size: 32px;
+  font-weight: 700;
+}
+.manage {
+  width: 1180px;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  position: relative;
+}
+.manage::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 160%;
+  height: 100%;
+  background-image: url("https://inline.company/wp-content/uploads/2024/07/New-official-website_v2_hp_background1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.manage-text {
+  width: 50%;
+  padding: 0 20px;
+}
+.manage-img {
+  width: 600px;
+  padding: 0 10px;
+  padding-top: 90px;
+  position: relative;
+  display: block;
+  left: -30px;
+}
+.manage-text span {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #064c8c;
+  font-weight: bolder;
+  text-indent: 50px;
+}
+.manage-text h3 {
+  font-size: 19.2px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #252932;
+}
+
+.manage-card:nth-of-type(1) {
+  margin-top: 0;
+}
+
+.manage-card {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 30px;
+  line-height: 1.7;
+  font-family: "Noto Sans Japanese-Normal", sans-serif !important;
+}
+.manage-card > div + div {
+  margin-left: 30px;
+}
+.card {
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+.card img {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  top: 44px;
+  left: -40px;
+  object-fit: contain;
 }
