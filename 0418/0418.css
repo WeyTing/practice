@@ -38,6 +38,7 @@ section {
 }
 .card-img {
 	position: relative;
+	overflow: hidden;
 }
 
 .bob {
@@ -47,7 +48,7 @@ section {
 	bottom: 0;
 	opacity: 0;
 	transform: translateX(100%);
-	transition: opacity 0.5s, transform 0.5s;
+	transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 .card-img:hover .bob {
 	opacity: 1;
