@@ -155,9 +155,14 @@ section {
 }
 .item:first-of-type {
 	justify-self: stretch;
-	grid-area: 2 / 2 / 5 / 9;
+	/*grid-area: 2 / 2 / 5 / 9;*/
 }
 .item:nth-of-type(10) {
 	justify-self: start;
 	align-self: flex-end;
+}
+
+.item:nth-of-type(11) {
+	grid-column-start: 3;
+	grid-column-end: 9;
 }
