@@ -140,3 +140,43 @@ nav ul ul li::before {
 	bottom: 0;
 	left: 0;
 }
+
+@media (max-width: 768px) {
+	header nav {
+		max-width: 1024px;
+		margin: 0 auto;
+		/*display: block;*/
+		position: relative;
+	}
+	nav ul {
+		display: block;
+		margin-top: 10px;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		right: 0;
+	}
+	ul li {
+		background-color: rgb(36, 119, 111);
+		margin: 0;
+		padding: 5px;
+		outline: 0px solid black;
+		border-radius: 0px;
+		position: relative;
+	}
+
+	nav ul ul {
+		display: none;
+		position: relative;
+		background-color: turquoise;
+		padding: 4px;
+		top: 0px;
+		transform: translateX(0);
+		border-radius: 0px 10px 10px 10px;
+	}
+
+	nav ul li:hover ul {
+		display: flex;
+		flex-direction: column;
+	}
+}
