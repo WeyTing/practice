@@ -1,182 +1,191 @@
 .container {
-	max-width: 1000px;
-	width: 100%;
-	height: 300px;
-	margin: 100px auto;
-	background-color: pink;
-	display: flex;
-	text-align: center;
-	gap: 2%;
+  max-width: 1000px;
+  width: 100%;
+  height: 300px;
+  margin: 100px auto;
+  background-color: pink;
+  display: flex;
+  text-align: center;
+  gap: 2%;
 }
 .container div {
-	width: 50%;
+  width: 50%;
 }
 .box {
-	background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 .box + .box {
-	background-color: chocolate;
+  background-color: chocolate;
 }
 
 section {
-	max-width: 960px;
-	width: 100%;
-	height: 100%;
-	margin: 100px auto;
-	background-color: salmon;
+  max-width: 960px;
+  width: 100%;
+  height: 100%;
+  margin: 100px auto;
+  background-color: salmon;
 }
 .aspect-img {
-	width: 50%;
-	aspect-ratio: 16/9;
+  width: 50%;
+  aspect-ratio: 16/9;
 }
 .aspect-img img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .padding-img {
-	position: relative;
-	padding-bottom: 28.125%;
+  position: relative;
+  padding-bottom: 28.125%;
 }
 .padding-img img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50%;
-	height: 100%;
-	object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
 }
 /* min 由小排到大 max 由大排到小  */
 /* 手機768px 平板1024px 電腦1280px */
 @media (min-width: 768px) {
-	.container {
-		background-color: greenyellow;
-	}
-	.container div {
-		width: 100%;
-		height: 100%;
-	}
+  .container {
+    background-color: greenyellow;
+  }
+  .container div {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
-	.container {
-		font-size: 20px;
-		background-color: gray;
-	}
+  .container {
+    font-size: 20px;
+    background-color: gray;
+  }
 }
 header {
-	width: 100%;
-	height: 60px;
-	background-color: turquoise;
+  width: 100%;
+  height: 60px;
+  background-color: turquoise;
 }
 header nav {
-	max-width: 1024px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	padding: 15px 0 15px 0;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 15px 0;
+}
+.fa-bars {
+  display: none;
 }
 nav ul {
-	display: flex;
+  display: flex;
 }
 ul li {
-	background-color: whitesmoke;
-	margin: 0 5px;
-	padding: 5px;
-	outline: 1px solid black;
-	border-radius: 10px;
-	position: relative;
+  background-color: whitesmoke;
+  margin: 0 5px;
+  padding: 5px;
+  outline: 1px solid black;
+  border-radius: 10px;
+  position: relative;
 }
 
 nav ul ul {
-	display: none;
-	position: absolute;
-	background-color: turquoise;
-	padding: 4px;
-	top: 55px;
-	transform: translateX(-15%);
-	border-radius: 0px 10px 10px 10px;
+  display: none;
+  position: absolute;
+  background-color: turquoise;
+  padding: 4px;
+  top: 55px;
+  transform: translateX(-15%);
+  border-radius: 0px 10px 10px 10px;
 }
 nav ul ul::before {
-	content: "▲";
-	color: turquoise;
-	position: absolute;
-	top: -18px;
-	left: 6%;
-	transform: translateX(-50%);
+  content: "▲";
+  color: turquoise;
+  position: absolute;
+  top: -18px;
+  left: 6%;
+  transform: translateX(-50%);
 }
 nav ul ul::after {
-	content: "";
-	font-size: 36px;
-	width: 130px;
-	height: 200px;
-	display: block;
-	position: absolute;
-	top: -30px;
-	left: -20px;
-	z-index: -1;
+  content: "";
+  font-size: 36px;
+  width: 130px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  z-index: -1;
 }
 
 nav ul li:hover ul {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 nav ul ul li {
-	display: block;
-	margin-bottom: 5px;
-	outline: none;
-	background-color: turquoise;
+  display: block;
+  margin-bottom: 5px;
+  outline: none;
+  background-color: turquoise;
 }
 nav ul ul li::before {
-	content: " ";
-	background-color: gray;
-	border-radius: 10px;
-	width: 100%;
-	height: 2px;
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
+  content: " ";
+  background-color: gray;
+  border-radius: 10px;
+  width: 100%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 @media (max-width: 768px) {
-	header nav {
-		max-width: 1024px;
-		margin: 0 auto;
-		/*display: block;*/
-		position: relative;
-	}
-	nav ul {
-		display: block;
-		margin-top: 10px;
-		position: absolute;
-		top: 50px;
-		left: 0;
-		right: 0;
-	}
-	ul li {
-		background-color: rgb(36, 119, 111);
-		margin: 0;
-		padding: 5px;
-		outline: 0px solid black;
-		border-radius: 0px;
-		position: relative;
-	}
+  header nav {
+    max-width: 1024px;
+    margin: 0 auto;
+    /*display: block;*/
+    position: relative;
+  }
+  .fa-bars {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+  }
+  nav ul {
+    display: block;
+    margin-top: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+  ul li {
+    background-color: rgb(36, 119, 111);
+    margin: 0;
+    padding: 5px;
+    outline: 0px solid black;
+    border-radius: 0px;
+    position: relative;
+  }
 
-	nav ul ul {
-		display: none;
-		position: relative;
-		background-color: turquoise;
-		padding: 4px;
-		top: 0px;
-		transform: translateX(0);
-		border-radius: 0px 10px 10px 10px;
-	}
+  nav ul ul {
+    display: none;
+    position: relative;
+    background-color: turquoise;
+    padding: 4px;
+    top: 0px;
+    transform: translateX(0);
+    border-radius: 0px 10px 10px 10px;
+  }
 
-	nav ul li:hover ul {
-		display: flex;
-		flex-direction: column;
-	}
+  nav ul li:hover ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
