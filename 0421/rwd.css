@@ -3,7 +3,7 @@
 	width: 100%;
 	height: 300px;
 	margin: 100px auto;
-	background-color: salmon;
+	background-color: pink;
 	display: flex;
 	text-align: center;
 	gap: 2%;
@@ -47,19 +47,96 @@ section {
 	height: 100%;
 	object-fit: cover;
 }
-
-@media (max-width: 768px) {
+/* min 由小排到大 max 由大排到小  */
+/* 手機768px 平板1024px 電腦1280px */
+@media (min-width: 768px) {
 	.container {
-		display: block;
+		background-color: greenyellow;
 	}
 	.container div {
 		width: 100%;
-		height: 50%;
+		height: 100%;
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 1024px) {
 	.container {
 		font-size: 20px;
+		background-color: gray;
 	}
+}
+header {
+	width: 100%;
+	height: 60px;
+	background-color: turquoise;
+}
+header nav {
+	max-width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 0 15px 0;
+}
+nav ul {
+	display: flex;
+}
+ul li {
+	background-color: whitesmoke;
+	margin: 0 5px;
+	padding: 5px;
+	outline: 1px solid black;
+	border-radius: 10px;
+	position: relative;
+}
+
+nav ul ul {
+	display: none;
+	position: absolute;
+	background-color: turquoise;
+	padding: 4px;
+	top: 55px;
+	transform: translateX(-15%);
+	border-radius: 0px 10px 10px 10px;
+}
+nav ul ul::before {
+	content: "▲";
+	color: turquoise;
+	position: absolute;
+	top: -18px;
+	left: 6%;
+	transform: translateX(-50%);
+}
+nav ul ul::after {
+	content: "";
+	font-size: 36px;
+	width: 130px;
+	height: 200px;
+	display: block;
+	position: absolute;
+	top: -30px;
+	left: -20px;
+	z-index: -1;
+}
+
+nav ul li:hover ul {
+	display: flex;
+	flex-direction: column;
+}
+
+nav ul ul li {
+	display: block;
+	margin-bottom: 5px;
+	outline: none;
+	background-color: turquoise;
+}
+nav ul ul li::before {
+	content: " ";
+	background-color: gray;
+	border-radius: 10px;
+	width: 100%;
+	height: 2px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
