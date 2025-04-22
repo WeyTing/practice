@@ -6,16 +6,23 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="rwd.css" />
 		<link rel="stylesheet" href="../resouce/reset(f2e02).css" />
+		<script
+			src="https://kit.fontawesome.com/72382dfed1.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<header>
 			<nav>
-				<i class="fas fa-bars"></i>
 				<h1><a href="">My Home</a></h1>
+				<label for="toggle-menu" class="toggle-menu">
+					<i class="fas fa-bars"></i>
+				</label>
 				<div>
+					<input type="checkbox" id="toggle-menu" />
 					<ul>
 						<li>
-							<a href="#">menu</a>
+							<a href="#" class="toggle-sec-menu">menu <span>▲</span></a>
 							<ul>
 								<li><a href="">submenu</a></li>
 								<li><a href="">submenu</a></li>
@@ -23,7 +30,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">menu</a>
+							<a href="#" class="toggle-sec-menu">menu <span>▲</span></a>
 							<ul>
 								<li>submenu</li>
 								<li>submenu</li>
@@ -31,14 +38,16 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">menu</a>
+							<a href="#" class="toggle-sec-menu">menu <span>▲</span></a>
 							<ul>
 								<li>submenu</li>
 								<li>submenu</li>
 								<li>submenu</li>
 							</ul>
 						</li>
-						<li><a href="#">menu</a></li>
+						<li>
+							<a href="#" class="toggle-sec-menu">menu <span>▲</span></a>
+						</li>
 					</ul>
 				</div>
 			</nav>

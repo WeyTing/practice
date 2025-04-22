@@ -65,6 +65,8 @@ section {
 		background-color: gray;
 	}
 }
+
+/* nav選單開始*/
 header {
 	width: 100%;
 	height: 60px;
@@ -76,6 +78,15 @@ header nav {
 	display: flex;
 	justify-content: space-between;
 	padding: 15px 0 15px 0;
+}
+.toggle-sec-menu span {
+	display: none;
+}
+.fa-bars {
+	display: none;
+}
+input[type="checkbox"] {
+	display: none;
 }
 nav ul {
 	display: flex;
@@ -148,29 +159,60 @@ nav ul ul li::before {
 		/*display: block;*/
 		position: relative;
 	}
-	nav ul {
+	.fa-bars {
 		display: block;
-		margin-top: 10px;
 		position: absolute;
-		top: 50px;
+		right: 15px;
+		top: 20px;
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+	input[type="checkbox"]:checked + ul {
+		display: block;
+	}
+	input + ul {
+		display: none;
+		position: absolute;
+		top: 60px;
 		left: 0;
 		right: 0;
+		color: white;
 	}
 	ul li {
 		background-color: rgb(36, 119, 111);
 		margin: 0;
-		padding: 5px;
+		padding: 10px 20px 10px 20px;
 		outline: 0px solid black;
 		border-radius: 0px;
 		position: relative;
+		border-bottom: 3px solid gray;
+	}
+	ul li + li + li + li {
+		border-bottom: 0px;
 	}
 
+	.toggle-sec-menu span {
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		transform: rotate(0deg);
+	}
+	.toggle-sec-menu:hover span {
+		transform: rotate(180deg);
+	}
+	nav ul ul li {
+		padding: 5px;
+		border-bottom: 0px;
+	}
 	nav ul ul {
 		display: none;
 		position: relative;
 		background-color: turquoise;
 		padding: 4px;
 		top: 0px;
+		margin-top: 10px;
 		transform: translateX(0);
 		border-radius: 0px 10px 10px 10px;
 	}
