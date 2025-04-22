@@ -1,0 +1,31 @@
+.container {
+	max-width: 1000px;
+	margin: 100px auto;
+	background-color: #aaa;
+	padding: 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.card {
+	padding: 20px;
+	background-color: #ffa;
+	width: 32.63%;
+}
+
+.card-img img {
+	width: 100%;
+	object-fit: cover;
+}
+
+@media (min-width: 768px) {
+	.card {
+		width: 49.3%;
+	}
+}
+@media (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+}
