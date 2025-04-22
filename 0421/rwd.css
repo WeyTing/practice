@@ -79,13 +79,14 @@ header nav {
 	justify-content: space-between;
 	padding: 15px 0 15px 0;
 }
-.toggle-sec-menu span {
-	display: none;
-}
+
 .fa-bars {
 	display: none;
 }
 input[type="checkbox"] {
+	display: none;
+}
+li span {
 	display: none;
 }
 nav ul {
@@ -186,39 +187,57 @@ nav ul ul li::before {
 		outline: 0px solid black;
 		border-radius: 0px;
 		position: relative;
-		border-bottom: 3px solid gray;
+		border-bottom: 3px solid rgb(19, 100, 92);
 	}
 	ul li + li + li + li {
 		border-bottom: 0px;
 	}
 
-	.toggle-sec-menu span {
+	li span {
 		display: block;
 		position: absolute;
 		right: 10px;
 		top: 10px;
 		transform: rotate(0deg);
 	}
-	.toggle-sec-menu:hover span {
+	li:hover span {
 		transform: rotate(180deg);
+		transition: transform 0.5s ease-in-out;
 	}
 	nav ul ul li {
 		padding: 5px;
-		border-bottom: 0px;
+		background-color: rgb(23, 216, 197);
+		border-right: 4px solid rgb(18, 105, 97);
+		border-bottom: 4px solid rgb(49, 145, 135);
+		border-radius: 10px;
+	}
+	nav ul ul li::before {
+		content: "";
+		width: 0%;
 	}
 	nav ul ul {
 		display: none;
 		position: relative;
-		background-color: turquoise;
+		background-color: #24776f;
 		padding: 4px;
 		top: 0px;
 		margin-top: 10px;
 		transform: translateX(0);
 		border-radius: 0px 10px 10px 10px;
 	}
-
+	nav ul ul::after {
+		content: "";
+		width: 0px;
+	}
 	nav ul li:hover ul {
 		display: flex;
 		flex-direction: column;
 	}
+}
+.text {
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	margin: 0 100px;
+	position: absolute;
 }
