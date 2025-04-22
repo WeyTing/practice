@@ -160,75 +160,33 @@ nav ul ul li::before {
 		/*display: block;*/
 		position: relative;
 	}
-	.fa-bars {
+	nav ul {
 		display: block;
+		margin-top: 10px;
 		position: absolute;
-		right: 15px;
-		top: 20px;
-	}
-	input[type="checkbox"] {
-		display: none;
-	}
-	input[type="checkbox"]:checked + ul {
-		display: block;
-	}
-	input + ul {
-		display: none;
-		position: absolute;
-		top: 60px;
+		top: 50px;
 		left: 0;
 		right: 0;
-		color: white;
 	}
 	ul li {
 		background-color: rgb(36, 119, 111);
 		margin: 0;
-		padding: 10px 20px 10px 20px;
+		padding: 5px;
 		outline: 0px solid black;
 		border-radius: 0px;
 		position: relative;
-		border-bottom: 3px solid rgb(19, 100, 92);
-	}
-	ul li + li + li + li {
-		border-bottom: 0px;
 	}
 
-	li span {
-		display: block;
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		transform: rotate(0deg);
-	}
-	li:hover span {
-		transform: rotate(180deg);
-		transition: transform 0.5s ease-in-out;
-	}
-	nav ul ul li {
-		padding: 5px;
-		background-color: rgb(23, 216, 197);
-		border-right: 4px solid rgb(18, 105, 97);
-		border-bottom: 4px solid rgb(49, 145, 135);
-		border-radius: 10px;
-	}
-	nav ul ul li::before {
-		content: "";
-		width: 0%;
-	}
 	nav ul ul {
 		display: none;
 		position: relative;
-		background-color: #24776f;
+		background-color: turquoise;
 		padding: 4px;
 		top: 0px;
-		margin-top: 10px;
 		transform: translateX(0);
 		border-radius: 0px 10px 10px 10px;
 	}
-	nav ul ul::after {
-		content: "";
-		width: 0px;
-	}
+
 	nav ul li:hover ul {
 		display: flex;
 		flex-direction: column;
