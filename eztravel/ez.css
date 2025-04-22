@@ -1,0 +1,248 @@
+header {
+	min-width: 1100px;
+	width: 100%;
+}
+.header-box {
+	max-width: 1100px;
+	height: 56px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 0;
+}
+hr {
+	border: none;
+	border-bottom: 1px solid #e8e8e8;
+}
+h1 {
+	width: 190px;
+	height: 22px;
+	align-items: center;
+	background-image: url("https://static.cdn-eztravel.com/www/api/8a392ac/images/eztravel-logo.svg");
+	background-size: contain;
+	position: relative;
+	left: -7px;
+}
+.user-box {
+	display: flex;
+}
+
+.user-box a {
+	display: inline-block;
+	padding: 0 10px;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: 400;
+}
+.order-btn {
+	position: relative;
+}
+.order-btn span {
+	font-size: 22px;
+	position: absolute;
+}
+.order-btn:hover .order-list {
+	opacity: 1;
+}
+.order-list {
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	width: 122px;
+	margin: 12.5px 0;
+	padding: 15px 0;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+		0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 25px;
+	opacity: 0;
+	transform: translateX(-50%);
+	transition: all 0.4s ease-in-out;
+}
+.order-list::before {
+	border-color: transparent transparent #fff;
+	border-style: solid;
+	border-width: 0 10px 13px;
+	content: "";
+	display: block;
+	height: 0;
+	left: 50%;
+	position: absolute;
+	top: -13px;
+	transform: translateX(-50%);
+	width: 0;
+}
+.login-btn {
+	background-color: #11d073;
+	border-radius: 15px;
+	color: #fff;
+	margin: 0 15px;
+	padding: 5px 10px;
+	margin-right: 5px;
+	font-weight: 700;
+}
+.login-btn::before {
+	background-image: url(https://static.cdn-eztravel.com/www/api/8a392ac/images/header-login-user.svg);
+	content: "";
+	display: inline-block;
+	height: 20px;
+	vertical-align: sub;
+	width: 20px;
+}
+.register-btn {
+	color: #0c9251;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+nav ul {
+	display: flex;
+	flex-direction: row;
+	margin-left: -30px;
+}
+nav ul li {
+	color: #222;
+	display: block;
+	font-size: 15px;
+	padding: 12px 30px;
+}
+nav ul li:hover {
+	color: #0c9251;
+	background-color: #f1f7f8;
+	cursor: pointer;
+}
+nav ul li div {
+	background-color: #f1f7f8;
+	border: 0;
+	border-radius: 0;
+	border-top: 1px solid #dedede;
+	box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	top: 103px;
+	position: absolute;
+	transition: 0.2s ease-in-out;
+	width: 100%;
+	height: 125px;
+}
+nav ul li:hover div {
+	opacity: 1;
+}
+
+nav a {
+	color: #999;
+	display: inline-block;
+	font-size: 14px;
+	height: 30px;
+	padding: 6px 0;
+	margin-left: 20px;
+}
+
+.img-box {
+	background-image: url("https://static.cdn-eztravel.com/assets/images/hpimg/banner/hp.jpg");
+	height: 360px;
+	background-position: top;
+	background-size: cover;
+}
+
+.trip {
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	top: 95px;
+}
+.trip h2 {
+	font-size: 32px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 20px;
+	line-height: 32px;
+}
+.order-box {
+	height: 180px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+.order-box ul {
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	justify-content: space-around;
+	align-items: center;
+	cursor: pointer;
+	font-size: 16px;
+	color: #666;
+	font-weight: 700;
+	border-bottom: 1px solid #dedede;
+}
+
+.order-box ul li {
+	line-height: 60px;
+}
+.order-box ul li:hover {
+	color: #11d073;
+}
+.search-box {
+	padding: 16px 30px;
+}
+.search-box span {
+	margin-bottom: 12px;
+	color: #11d073;
+	font-size: 14px;
+	display: flex;
+	justify-content: end;
+}
+
+.search-box span a:hover {
+	background-color: #f1f7f8;
+}
+.input-box {
+	display: flex;
+	flex-direction: row;
+}
+.input-box > div {
+	width: 854px;
+	height: 100%;
+	min-height: 60px;
+	max-height: 60px;
+	max-width: 1043px;
+	border-radius: 10px;
+	border: 1px solid #11d073;
+	padding: 8px 19px;
+	display: flex;
+	flex-direction: column;
+}
+
+.input-box button {
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 10px;
+	min-width: 180px;
+	min-height: 60px;
+	max-height: 60px;
+	padding: 7px;
+	border-color: #11d073;
+	color: #fff;
+	background-color: #11d073;
+	border-radius: 10px;
+}
+.input-box button:hover {
+	cursor: pointer;
+	background-color: #0c9251;
+	transition: background-color 0.15s;
+}
