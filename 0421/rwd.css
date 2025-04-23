@@ -86,6 +86,9 @@ header nav {
 input[type="checkbox"] {
 	display: none;
 }
+input[type="radio"] {
+	display: none;
+}
 li span {
 	display: none;
 }
@@ -166,19 +169,26 @@ nav ul ul li::before {
 		right: 15px;
 		top: 20px;
 	}
-	input[type="checkbox"] {
+	#toggle-menu {
 		display: none;
 	}
-	input[type="checkbox"]:checked + ul {
+	#toggle-menu:checked + ul {
 		display: block;
+		visibility: visible;
+		right: 0;
+		opacity: 1;
+		transition: all 0.5s 0.1s ease-in-out;
 	}
-	input + ul {
-		display: none;
+	#toggle-menu + ul {
+		display: block;
+		visibility: hidden;
+		opacity: 0;
 		position: absolute;
 		top: 60px;
 		left: 0;
-		right: 0;
+		right: 100%;
 		color: white;
+		transition: all 0.5s 0.1s ease-in-out;
 	}
 	ul li {
 		background-color: rgb(36, 119, 111);
@@ -200,10 +210,35 @@ nav ul ul li::before {
 		top: 10px;
 		transform: rotate(0deg);
 	}
-	li:hover span {
-		transform: rotate(180deg);
-		transition: transform 0.5s ease-in-out;
+	#toggle-sub {
+		display: none;
 	}
+	#toggle-sub:checked + ul {
+		display: block;
+	}
+	#toggle-sub + ul {
+		display: none;
+	}
+
+	#toggle-sub2 {
+		display: none;
+	}
+	#toggle-sub2:checked + ul {
+		display: block;
+	}
+	#toggle-sub2 + ul {
+		display: none;
+	}
+	#toggle-sub3 {
+		display: none;
+	}
+	#toggle-sub3:checked + ul {
+		display: block;
+	}
+	#toggle-sub3 + ul {
+		display: none;
+	}
+
 	nav ul ul li {
 		padding: 5px;
 		background-color: rgb(23, 216, 197);
@@ -218,7 +253,7 @@ nav ul ul li::before {
 	nav ul ul {
 		display: none;
 		position: relative;
-		background-color: turquoise;
+		background-color: #24776f;
 		padding: 4px;
 		top: 0px;
 		margin-top: 10px;
@@ -228,11 +263,6 @@ nav ul ul li::before {
 	nav ul ul::after {
 		content: "";
 		width: 0px;
-	}
-
-	nav ul li:hover ul {
-		display: flex;
-		flex-direction: column;
 	}
 }
 
