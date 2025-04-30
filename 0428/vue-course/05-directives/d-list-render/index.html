@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- 3. 列表渲染 -->
+		<div id="list">
+			<h3>3. 列表渲染</h3>
+			<!-- v-for -->
+			<div>
+				<h4>寵物商店</h4>
+				<p>{{message}}</p>
+				<ul>
+					<li v-for="(pet, index) in pets" :key="index">
+						{{ pet.emoji }} {{ pet.name }} - ${{ pet.price }}
+						<button @click="adoptPet(index)">領養</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
