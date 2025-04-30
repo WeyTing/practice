@@ -24,6 +24,7 @@ const reset = () => {
 	</div>
 </template>
 
+<!---->
 <style scoped>
 div {
 	background-color: bisque;

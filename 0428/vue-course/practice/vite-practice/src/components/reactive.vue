@@ -17,6 +17,7 @@ const count = reactive({
 });
 </script>
 
+<!---->
 <template>
 	<div>
 		<h2>計數器</h2>
