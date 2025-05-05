@@ -2,9 +2,11 @@
 import { ref, watch } from "vue";
 import QuantityAdjuster from "./QuantityAdjuster.vue";
 import productImage from "../../assets/ps5pro.jpg";
+import Favorite from "./Favorite.vue";
 
 const currentQuantity = ref(3);
-
+const price = ref(29999);
+const isFavorite = ref(false);
 // 8. 實作處理數量更新的函式
 const handleQuantityUpdate = (quantity) => {
 	currentQuantity.value = quantity;
@@ -27,6 +29,11 @@ const handleQuantityUpdate = (quantity) => {
 		}
 	});
 };
+const isfavorite = () => {
+	isFavorite.value = !isFavorite.value;
+	console.log(isFavorite.value);
+	console.log(isFavorite);
+};
 </script>
 
 <template>
@@ -38,14 +45,15 @@ const handleQuantityUpdate = (quantity) => {
 			</div>
 			<div class="product-info">
 				<h3>測試商品</h3>
-				<p>單價：$30000</p>
+				<p>單價：{{ price }}</p>
 				<!-- 9. 加入 QuantityAdjuster 元件 -->
 				<QuantityAdjuster
 					:initial-qty="currentQuantity"
 					@update-quantity="handleQuantityUpdate"
 				/>
 				<!-- 10. 顯示總金額 -->
-				<p>總金額:$ {{ currentQuantity * 30000 }}</p>
+				<p>總金額:$ {{ currentQuantity * price }}</p>
+				<Favorite :is-favorite="isFavorite" @toggle-favorite="isfavorite" />
 			</div>
 		</div>
 	</div>

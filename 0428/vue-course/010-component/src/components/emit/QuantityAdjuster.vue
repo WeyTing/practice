@@ -24,11 +24,11 @@ const minus = () => {
 
 <template>
 	<div class="quantity-adjuster">
-		<button @click="minus">-</button>
+		<button @click="minus" :disabled="props.initialQty <= 1">-</button>
 		<!-- 5. 加入減少按鈕 -->
 		<span>{{ props.initialQty }}</span>
 		<!-- 6. 顯示目前數量 -->
-		<button @click="add">+</button>
+		<button @click="add" :disabled="props.initialQty >= 10">+</button>
 		<!-- 7. 加入增加按鈕 -->
 	</div>
 </template>
