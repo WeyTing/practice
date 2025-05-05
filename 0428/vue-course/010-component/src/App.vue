@@ -52,8 +52,8 @@ const firstMessage = {
 		<!--<UseItemList />-->
 		<!--<UseLayout />-->
 		<!-- <Counter /> -->
-		<!-- <FormParent /> -->
-		<!-- <Cart /> -->
+		<FormParent />
+		<Cart />
 	</main>
 </template>
 
