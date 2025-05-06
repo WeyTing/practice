@@ -31,11 +31,11 @@ provide("toggleTheme", () => {
 
 // === 語言切換 ===
 // 目前語言
-const currentLang = ref("cn");
+const currentLang = ref("zh");
 
 // 語系資料
 const locales = {
-	cn: zhLocale,
+	zh: zhLocale,
 	en: enLocale,
 };
 
@@ -47,7 +47,7 @@ provide(
 
 // 提供切換語言方法
 provide("toggleLanguage", () => {
-	currentLang.value = currentLang.value === "cn" ? "en" : "cn";
+	currentLang.value = currentLang.value === "zh" ? "en" : "zh";
 	console.log(locales);
 	console.log(locales[currentLang.value]);
 });
