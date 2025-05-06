@@ -1,18 +1,21 @@
 <script setup>
-import { inject } from 'vue'
+import { inject } from "vue";
+import zhLocale from "../locales/zh.js";
+import enLocale from "../locales/en.js";
+const locales = inject("locale");
 </script>
 
 <template>
-  <div class="welcome">
-    <h1>標題</h1>
-    <h2>副標題</h2>
-    <p>描述</p>
-  </div>
+	<div class="welcome">
+		<h1>{{ locales.welcome.title }}</h1>
+		<h2>{{ locales.welcome.subtitle }}</h2>
+		<p>{{ locales.welcome.description }}</p>
+	</div>
 </template>
 
 <style scoped>
 .welcome {
-  padding: 2rem;
-  text-align: center;
+	padding: 2rem;
+	text-align: center;
 }
 </style>
