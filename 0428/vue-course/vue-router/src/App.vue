@@ -21,6 +21,10 @@ const totest = () => {
         <RouterLink to="/myname">myname</RouterLink>
         <RouterLink to="/test">test</RouterLink>
         <button @click="totest">去測試頁</button>
+        <RouterLink to="/User/12345">使用者</RouterLink>
+        <RouterLink to="/login">登入頁面</RouterLink>
+        <h1>Hello App!</h1>
+        <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
       </nav>
     </div>
   </header>
@@ -29,6 +33,15 @@ const totest = () => {
 </template>
 
 <style scoped>
+button {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

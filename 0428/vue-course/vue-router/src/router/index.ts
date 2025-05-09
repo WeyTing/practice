@@ -19,15 +19,43 @@ const router = createRouter({
     },
     {
       path: '/myname',
-      name: 'asamqq',
+      name: 'myname',
       component: () => import('../views/self.vue'),
     },
     {
       path: '/test',
-      name: 'asam',
+      name: 'test',
       component: () => import('../views/testPage.vue'),
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/Login.vue'),
+    },
+    {
+      path: '/user/:id', //巢狀結構
+      name: 'user',
+      component: () => import('../views/User.vue'),
+      children: [
+        {
+          path: 'profile',
+          name: 'profile',
+          component: () => import('../views/UserProfile.vue'),
+        },
+        {
+          path: 'settings',
+          name: 'settings',
+          component: () => import('../views/UserSetiing.vue'),
+        },
+      ],
+    },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  console.log('to', to) //to是要跳轉的路徑
+  console.log('from', from) //from是從哪個路徑來的
+  next() //放行 //next(false) //不放行 //next('/login')
 })
 
 export default router
