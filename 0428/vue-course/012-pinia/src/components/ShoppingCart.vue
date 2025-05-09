@@ -4,6 +4,13 @@ import { useCartStore } from "@/stores/cart";
 
 const cartStore = useCartStore();
 const { items, total, totalItems } = storeToRefs(cartStore);
+
+const handleQuantityChange = (item, newquantity) => {
+	if (newquantity < 1) {
+		newquantity = 1;
+	}
+	cartStore.updateQuantity(item.id, newquantity);
+};
 </script>
 
 <template>
@@ -19,10 +26,9 @@ const { items, total, totalItems } = storeToRefs(cartStore);
 				<div class="item-controls">
 					<input
 						type="number"
-						v-model.number="item.quantity"
+						:value="item.quantity"
 						min="1"
-						@change="cartStore.updateQuantity(item.id, item.quantity)"
-						disabled
+						@input="handleQuantityChange(item, $event.target.value)"
 					/>
 					<button @click="cartStore.addToCart(item)">新增</button>
 					<button @click="cartStore.reduceToCart(item)">減少</button>
