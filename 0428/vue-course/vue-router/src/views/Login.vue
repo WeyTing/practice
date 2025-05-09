@@ -17,8 +17,8 @@ const authStore = useAuthStore()
 function handlelogin() {
   console.log(username.value, password.value)
   if (username.value === 'admin' && password.value === '123456') {
-    authStore.login('weyting')
-    router.push('/User/weyting')
+    authStore.login('weyting') // 用戶登入
+    router.push('/User/weyting') // /User/:id 預計樣式
   } else {
     alert('帳號密碼錯誤')
   }

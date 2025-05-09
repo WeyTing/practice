@@ -35,6 +35,7 @@ const router = createRouter({
     {
       path: '/user/:id', //巢狀結構
       name: 'user',
+      meta: { requiresAuth: true }, //需要驗證
       component: () => import('../views/User.vue'),
       children: [
         {
@@ -53,9 +54,16 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('to', to) //to是要跳轉的路徑
-  console.log('from', from) //from是從哪個路徑來的
-  next() //放行 //next(false) //不放行 //next('/login')
+  const isToken = localStorage.getItem('token')
+  //next() //放行 //next(false) //不放行 //next('/login')
+  if (to.meta.requiresAuth && !isToken) {
+    next({ name: 'login' })
+  } else if (to.name === 'login' && isToken) {
+    console.log('有token')
+    next({ name: 'home' })
+  } else {
+    next()
+  }
 })
 
 export default router

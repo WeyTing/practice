@@ -1,11 +1,18 @@
 <script setup>
-import { useRoute, RouterLink, RouterView } from 'vue-router'
-const route = useRoute()
-console.log(route)
+import { useRoute, useRouter, RouterLink, RouterView } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
+const authStore = useAuthStore()
+const router = useRouter()
+console.log(router)
+const handlelogout = () => {
+  authStore.logout()
+  router.push('/login')
+}
 </script>
 
 <template>
   <h2>User</h2>
+  <button @click="handlelogout">登出</button>
   <div>
     <nav>
       <RouterLink to="/user/123456/profile">PROFILE</RouterLink>

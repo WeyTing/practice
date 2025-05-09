@@ -5,7 +5,7 @@ export const useAuthStore = defineStore('auth', () => {
   const token = ref(localStorage.getItem('token')) //取得目前的token
   const isAuth = computed(() => {
     //判斷是否有token
-    return token.value
+    return token.value //有token回傳true
   })
   const login = (newtoken) => {
     //寫入新的token
